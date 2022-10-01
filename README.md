@@ -7,7 +7,7 @@ Chaque jour une page en rapport au mot du jour.
 
 # JOUR 01 : Forêt
 
-Récupérez la page, intégrez là en full screen (ou non) : Chaque fois qu'un utilisateur tapera le mot "Forêt" (ou toute déclinaison avec ou sans accent / avec ou sans majuscule : forêt, FoReT, etc), un émoji forestier s'affichera à l'écran, à un endroit et une taille random !
+Récupérez la page [01.html](01.html), intégrez là en full screen (ou non) : Chaque fois qu'un utilisateur tapera le mot "Forêt" (ou toute déclinaison avec ou sans accent / avec ou sans majuscule : forêt, FoReT, etc), un émoji forestier s'affichera à l'écran, à un endroit et une taille random !
 
 Vous devez juste modifier la page pour mettre votre nom de chaîne en bas à la place de "totorophd"
 
