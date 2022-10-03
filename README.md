@@ -6,6 +6,16 @@ Pour m'amuser un peu, j'ai décidé d'utiliser la liste Inktober de Marie Boisea
 ## HOW TO : 
 Chaque jour une page en rapport au mot du jour. Vous récupérez la page, vous l'éditez pour mettre votre nom de chaîne en bas à la place de "totorophd" et vous l'intégrez simplement en browser source sur OBS
 
+# JOUR 03 : Pot de Fleur
+
+Rajoutez un pot de fleur sur votre stream ! Récupérez la page [03.html](03.html), intégrez là en full screen (vous pouvez crop/resize après)
+Les viewers faire grandir la plante en tapant "arroser", ou en commencer une nouvelle en tapant "couper"
+Chaque arbre est unique.
+Vous pouvez changer les couleurs des feuilles dans le code en changeant les valeurs de _LEAFCOLOR. Vous pouvez en rajouter, en enlever. 
+
+https://user-images.githubusercontent.com/64203596/193544444-52083aa8-34b9-4e40-b5c0-e00c1f71b22c.mp4
+
+
 # JOUR 02 : Lit
 
 C'est l'heure de dormir ! Récupérez la page [02.html](02.html), intégrez là en full screen (ou non) : Chaque fois qu'un utilisateur tapera le mot "jour", il fera jour. "Nuit", il fera nuit. 
