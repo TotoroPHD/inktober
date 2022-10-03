@@ -13,6 +13,8 @@ Les viewers faire grandir la plante en tapant "arroser", ou en commencer une nou
 Chaque arbre est unique.
 Vous pouvez changer les couleurs des feuilles dans le code en changeant les valeurs de _LEAFCOLOR. Vous pouvez en rajouter, en enlever. 
 
+Le système de génération d'arbre a été grandement inspiré par les travaux de https://github.com/simondevyoutube/LSystems_JavaScript
+
 https://user-images.githubusercontent.com/64203596/193544444-52083aa8-34b9-4e40-b5c0-e00c1f71b22c.mp4
 
 
