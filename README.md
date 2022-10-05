@@ -6,6 +6,14 @@ Pour m'amuser un peu, j'ai décidé d'utiliser la liste Inktober de Marie Boisea
 ## HOW TO : 
 Chaque jour une page en rapport au mot du jour. Vous récupérez la page, vous l'éditez pour mettre votre nom de chaîne en bas à la place de "totorophd" et vous l'intégrez simplement en browser source sur OBS
 
+# JOUR 05 : Sac à Dos
+Jour 5 : Sac à dos
+Sac à dos, Sac à dos ! 
+Il y a tout dans le sac à dos de Dora ! Tapez !sacados pour faire pop un Emoji random de la liste entière des Emojis !
+Récupérez la page [05.html](05.html) et intégrez là, et placez là où vous voulez, dans un ptit coin ou en grand !
+
+https://user-images.githubusercontent.com/64203596/194069566-1745aa17-7b17-4ff9-adc5-a408316754ca.mp4
+
 # JOUR 04 : Fenêtre
 
 Il faut aérer un peu le stream ! Il se remplit de poussière au fur et à mesure. Tant que personne ne tape !fenetre, ça s'accumule ! 
