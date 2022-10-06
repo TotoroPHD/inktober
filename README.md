@@ -6,7 +6,7 @@ Pour m'amuser un peu, j'ai décidé d'utiliser la liste Inktober de Marie Boisea
 ## HOW TO : 
 Chaque jour une page en rapport au mot du jour. Vous récupérez la page, vous l'éditez pour mettre votre nom de chaîne en bas à la place de "totorophd" et vous l'intégrez simplement en browser source sur OBS
 
-# JOUR 05 : Gigantesque
+# JOUR 06 : Gigantesque
 Oh non, Mario prend toute la place sur le stream ! Demandez à vos viewers de l'aide en tapant "!carapace" pour le faire réduire de moitié ! 
 Récupérez la page [05.html](05.html) et intégrez là en full screen sur le live
 Vous pouvez choisir la durée de remplissage complet de Mario en changeant la variable "tempsPourMarioMaxEnSeconde" (défaut : 60 secondes)
