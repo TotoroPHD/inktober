@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Inktober - 06 - Gigantesque</title>
+    <meta charset="utf-8">
+    <script src="https://cdn.jsdelivr.net/npm/comfy.js@latest/dist/comfy.min.js"></script>
+</head>
+
+<style>
+    .mario {
+        position: absolute;
+        z-index: 1;
+        right: 0px;
+        bottom: 0px;
+        transform: scaleX(-1);
+    }
+
+    .animation-carapace {
+        position: absolute;
+        z-index: 2;
+        right: 0px;
+        bottom: 0px;
+        height: 0px;
+        width: auto;
+        display: inline-block;
+        animation: animation-carapace 1s linear both;
+    }
+
+    @keyframes animation-carapace {
+        0% {
+            transform: translateX(-1920px);
+        }
+
+        99% {
+            transform: translateX(0px);
+            opacity: 1;
+        }
+
+        100% {
+            opacity: 0;
+        }
+    }
+</style>
+
+<body>
+    <img id="mario" class="mario" src="https://cdn.pixabay.com/photo/2021/02/11/15/40/mario-6005703_960_720.png">
+    <img id="carapace0" class="animation-carapace" src="https://i.imgur.com/Bpvxrpo.png">
+    <img id="carapace1" class="animation-carapace" src="https://i.imgur.com/Bpvxrpo.png">
+    <img id="carapace2" class="animation-carapace" src="https://i.imgur.com/Bpvxrpo.png">
+    <img id="carapace3" class="animation-carapace" src="https://i.imgur.com/Bpvxrpo.png">
+    <img id="carapace4" class="animation-carapace" src="https://i.imgur.com/Bpvxrpo.png">
+</body>
+
+<script>
+
+    var marioW = 0;
+    var curCarapace = 0;
+    var carapaces = document.getElementsByClassName("animation-carapace");
+    var mario = document.getElementById("mario");
+
+    var carapace = document.getElementById("carapace");
+    mario.style.width = marioW + "px";
+
+
+    function delay(time) {
+        return new Promise(resolve => setTimeout(resolve, time));
+    }
+
+
+    ComfyJS.onCommand = (user, command, message, flags, extra) => {
+        if (command === "carapace") {
+
+            carapaces[curCarapace].style.height = marioW + "px";
+            carapaces[curCarapace].style.animation = 'none';
+            carapaces[curCarapace].offsetHeight;
+            carapaces[curCarapace].style.animation = null;
+            delay(1000).then(() => {
+                marioW = Math.floor(marioW / 2);
+            });
+
+            curCarapace++;
+            if (curCarapace == carapaces.length) curCarapace = 0;
+        }
+    }
+
+    
+
+    var tempsPourMarioMaxEnSeconde = 10; // ICI LE TEMPS QUE MET MARIO A REMPLIR LA PAGE EN SECONDES
+    setInterval(function () { if (marioW < window.innerWidth) { marioW++; mario.style.width = marioW + "px"; console.log(marioW) } }, tempsPourMarioMaxEnSeconde * 1000 / 2000);
+
+
+    nomChaineTwitch = "totorophd"  // METTEZ ICI LE NOM DE VOTRE CHAINE TWITCH
+
+    ComfyJS.Init(nomChaineTwitch)
+
+</script>
+
+</html>
