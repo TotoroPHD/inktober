@@ -8,7 +8,7 @@ Chaque jour une page en rapport au mot du jour. Vous récupérez la page, vous l
 
 # JOUR 06 : Gigantesque
 Oh non, Mario prend toute la place sur le stream ! Demandez à vos viewers de l'aide en tapant "!carapace" pour le faire réduire de moitié ! 
-Récupérez la page [05.html](05.html) et intégrez là en full screen sur le live
+Récupérez la page [06.html](06.html) et intégrez là en full screen sur le live
 Vous pouvez choisir la durée de remplissage complet de Mario en changeant la variable "tempsPourMarioMaxEnSeconde" (défaut : 60 secondes)
 
 https://user-images.githubusercontent.com/64203596/194279179-0f0db70d-2ba2-4153-94b5-ad94521e5e1f.mp4
