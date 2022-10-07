@@ -6,6 +6,12 @@ Pour m'amuser un peu, j'ai décidé d'utiliser la liste Inktober de Marie Boisea
 ## HOW TO : 
 Chaque jour une page en rapport au mot du jour. Vous récupérez la page, vous l'éditez pour mettre votre nom de chaîne en bas à la place de "totorophd" et vous l'intégrez simplement en browser source sur OBS
 
+# JOUR 07 : Paysage
+Plus paisble aujourd'hui, rajoutez simplement une fenêtre sur un joli paysage aléatoire issu de la librairie libre de droit Unsplash. Des milliers de possibilités ! 
+Vos viewers peuvent taper "!paysage" pour changer de paysage. Récupérez la page [06.html](06.html), intégrez là en 1920x1080 puis redimensionnez là comme vous le souhaitez.
+
+https://user-images.githubusercontent.com/64203596/194549288-81a84b99-af98-4b5d-9ba4-3b360bfc424f.mp4
+
 # JOUR 06 : Gigantesque
 Oh non, Mario prend toute la place sur le stream ! Demandez à vos viewers de l'aide en tapant "!carapace" pour le faire réduire de moitié ! 
 Récupérez la page [06.html](06.html) et intégrez là en full screen sur le live
