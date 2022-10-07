@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Inktober - 07 - Paysage</title>
+    <meta charset="utf-8">
+    <script src="https://cdn.jsdelivr.net/npm/comfy.js@latest/dist/comfy.min.js"></script>
+</head>
+
+<style>
+    .fenetre {
+        position: absolute;
+        width: 1920px;
+        height: 1080px;
+        top: 0px;
+        left: 0px;
+        z-index: 2;
+    }
+
+    .paysage {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        z-index: 1;
+    }
+
+    .all {
+        position: absolute;
+        width: 1920px;
+        height: 1080px;
+        top: 0px;
+        left: 0px;
+    }
+
+    .animation-in {
+        display: inline-block;
+        animation: animation-in 0.5s linear both;
+    }
+
+    .animation-out {
+        display: inline-block;
+        animation: animation-out 0.5s linear both;
+    }
+
+    @keyframes animation-in {
+        0% {
+            transform: translateY(-500px) translateX(480px);
+            height: 50%;
+            width: 50%;
+        }
+
+        50% {
+            transform: translateY(270px) translateX(480px);
+            height: 50%;
+            width: 50%;
+        }
+
+        100% {
+            transform: translateY(0px) translateX(0px);
+            height: 100%;
+            width: 100%;
+        }
+    }
+
+    @keyframes animation-out {
+        0% {
+            transform: translateY(0px) translateX(0px);
+            height: 100%;
+            width: 100%;
+        }
+
+        50% {
+            transform: translateY(270px) translateX(480px);
+            height: 50%;
+            width: 50%;
+        }
+
+        100% {
+            transform: translateY(-500px) translateX(480px);
+            height: 50%;
+            width: 50%;
+        }
+    }
+</style>
+
+<body>
+    <img id="fenetre" class="fenetre" src="https://cdn.pixabay.com/photo/2016/12/15/11/50/window-1908703_960_720.png">
+    <img id="paysage" class="paysage">
+</body>
+
+<script>
+
+    function delay(time) {
+        return new Promise(resolve => setTimeout(resolve, time));
+    }
+
+    var fenetre = document.getElementById("fenetre");
+    var paysage = document.getElementById("paysage");
+    ComfyJS.onCommand = (user, command, message, flags, extra) => {
+        if (command === "paysage") {
+            fenetre.classList.remove("animation-in")
+            paysage.classList.remove("animation-in")
+            fenetre.classList.add("animation-out")
+            paysage.classList.add("animation-out")
+
+            delay(500).then(() => {
+                fetch("https://source.unsplash.com/1920x1080/?landscape").then((response) => {
+                    paysage.src = response.url;
+                    delay(500).then(() => {
+                        fenetre.classList.add("animation-in")
+                        paysage.classList.add("animation-in")
+                        fenetre.classList.remove("animation-out")
+                        paysage.classList.remove("animation-out")
+                    });
+                });
+            });
+
+        }
+    }
+
+    nomChaineTwitch = "totorophd"  // METTEZ ICI LE NOM DE VOTRE CHAINE TWITCH
+    ComfyJS.Init(nomChaineTwitch)
+
+</script>
+
+</html>
