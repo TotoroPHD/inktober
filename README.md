@@ -6,9 +6,15 @@ Pour m'amuser un peu, j'ai décidé d'utiliser la liste Inktober de Marie Boisea
 ## HOW TO : 
 Chaque jour une page en rapport au mot du jour. Vous récupérez la page, vous l'éditez pour mettre votre nom de chaîne en bas à la place de "totorophd" et vous l'intégrez simplement en browser source sur OBS
 
+# JOUR 08 : Légumes
+Faites tomber un légume dans la soupe, elle prendra lentement la couleur du légume qui vient de tomber ! 
+Récupérez la page [08.html](08.html), intégrez là en 1920x1080 puis redimensionnez là comme vous le souhaitez.
+
+https://user-images.githubusercontent.com/64203596/194729384-6e6bdb88-98ed-42c7-9de0-6dd118727374.mp4
+
 # JOUR 07 : Paysage
 Plus paisble aujourd'hui, rajoutez simplement une fenêtre sur un joli paysage aléatoire issu de la librairie libre de droit Unsplash. Des milliers de possibilités ! 
-Vos viewers peuvent taper "!paysage" pour changer de paysage. Récupérez la page [06.html](06.html), intégrez là en 1920x1080 puis redimensionnez là comme vous le souhaitez.
+Vos viewers peuvent taper "!paysage" pour changer de paysage. Récupérez la page [07.html](07.html), intégrez là en 1920x1080 puis redimensionnez là comme vous le souhaitez.
 
 https://user-images.githubusercontent.com/64203596/194549288-81a84b99-af98-4b5d-9ba4-3b360bfc424f.mp4
 
