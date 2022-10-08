@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Inktober - 08 - Légumes</title>
+    <meta charset="utf-8">
+    <script src="https://cdn.jsdelivr.net/npm/comfy.js@latest/dist/comfy.min.js"></script>
+</head>
+
+<style>
+    p {
+        font-size: 100px;
+    }
+
+    .chaudron {
+        position: absolute;
+        width: 300px;
+        height: auto;
+        left: 810px;
+        bottom: 0px;
+    }
+
+    .legume {
+        position: absolute;
+        left: 890px;
+    }
+
+    .legume-drop {
+        display: inline-block;
+        animation: legume-drop 3s linear both;
+    }
+
+    .ellipse {
+        position: absolute;
+        background-color: #70a2ff;
+        left: 850px;
+        z-index: 3;
+        bottom: 165px;
+        height: 50px;
+        width: 220px;
+        border-radius: 50%;
+    }
+
+    @keyframes legume-drop {
+        0% {
+            transform: translateY(-500px);
+        }
+
+        15% {
+            transform: translateY(300px);
+
+        }
+
+        20% {
+            transform: translateY(710px);
+        }
+
+        100% {
+            transform: translateY(800px);
+        }
+    }
+</style>
+
+<body>
+    <div class="legume" style="z-index:3">
+        <p id="legume"></p>
+    </div>
+    <div class="ellipse" id="ellipse1" style="z-index:2"></div>
+    <div class="ellipse" id="ellipse2" style="z-index:2"></div>
+    <div><img class="chaudron" style="z-index:1" src="https://i.imgur.com/481nFjm.png"></div>
+    <div><img class="chaudron" style="z-index:4" src="https://i.imgur.com/8HShjAw.png"></div>
+</body>
+
+<script>
+
+    var legumeDiv = document.getElementById("legume");
+    var ellipseDiv1 = document.getElementById("ellipse1");
+    var ellipseDiv2 = document.getElementById("ellipse2");
+    ellipseDiv1.style.opacity = 1;
+    ellipseDiv2.style.opacity = 0;
+    var curellipse = 1;
+
+    function delay(time) {
+        return new Promise(resolve => setTimeout(resolve, time));
+    }
+
+    var legumes = ["🍆", "🍄", "🥦", "🥔", "🧅", "🥕", "🥬"];
+    var legumesColors = ["#5E4A9D", "#F03A17", "#13A10E", "#BB9167", "#FFD679", "#F7630C", "#79DB65"]
+
+    var e1 = 0;
+    var e2 = 0;
+
+    legumeDiv.classList.add("legume-drop")
+
+    function randInt(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) + min)
+    }
+
+    //
+    ComfyJS.onCommand = (user, command, message, flags, extra) => {
+        if (command === "legume") {
+            var randomNb = randInt(0, legumes.length - 1)
+
+            legumeDiv.innerHTML = legumes[randomNb]
+
+            legumeDiv.style.animation = 'none';
+            legumeDiv.offsetHeight;
+            legumeDiv.style.animation = null;
+
+            if (curellipse == 1) {
+                curellipse = 2;
+                delay(700).then(() => {
+                    e2 = 0.01;
+                    e1 = -0.01;
+                    ellipseDiv2.style.backgroundColor = legumesColors[randomNb];
+                });
+            } else {
+                curellipse = 1;
+                delay(700).then(() => {
+                    e1 = 0.01;
+                    e2 = -0.01;
+                    ellipseDiv1.style.backgroundColor = legumesColors[randomNb];
+                });
+            }
+        }
+    }
+
+    setInterval(function () {
+        if (e1 != 0 && e2 != 0) {
+            console.log(e1, e2, ellipseDiv1.style.opacity, ellipseDiv2.style.opacity)
+            ellipseDiv1.style.opacity = parseFloat(ellipseDiv1.style.opacity) + e1;
+            ellipseDiv2.style.opacity = parseFloat(ellipseDiv2.style.opacity) + e2;
+
+            if (ellipseDiv1.style.opacity == 0 || ellipseDiv2.style.opacity == 0) {
+                e1 = 0;
+                e2 = 0;
+            }
+        }
+    }, 10);
+
+    nomChaineTwitch = "totorophd"  // METTEZ ICI LE NOM DE VOTRE CHAINE TWITCH
+    ComfyJS.Init(nomChaineTwitch)
+
+</script>
+
+</html>
