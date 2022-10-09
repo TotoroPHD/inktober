@@ -6,6 +6,22 @@ Pour m'amuser un peu, j'ai décidé d'utiliser la liste Inktober de Marie Boisea
 ## HOW TO : 
 Chaque jour une page en rapport au mot du jour. Vous récupérez la page, vous l'éditez pour mettre votre nom de chaîne en bas à la place de "totorophd" et vous l'intégrez simplement en browser source sur OBS
 
+# JOUR 09 : Soirée
+ET C'EST PARTI POUR LA GROSSE SOIREEEEEE ATTRAPE LES LASERS MAN C'EST TROP SUR 
+Récupérez la page [09.html](09.html), intégrez là en 1920x1080 
+Plein de petites variantes pour aujourd'hui : 
+Si un viewer tapes "!laser", ça rajoute un laser d'une couleur random.
+Si un viewer tapes "!laser couleur", couleur pouvant valoir un nom de couleur en anglais, ou un code hexa, ça rajoute un laser de la couleur demandée.
+Il y a une limite de 30 lasers max dans la scène. 
+
+Niveau streamer maintenant : 
+!clear supprimes tous les lasers
+!lasershow lance un LASER SHOW AVEC 40 LASERS MULTICOLORES pendant 30 secondes
+!lasershow + une durée en secondes = lasershow qui dure X secondes.
+
+https://user-images.githubusercontent.com/64203596/194782008-e3c93528-21c3-4c61-a648-3f451891792f.mp4
+
+
 # JOUR 08 : Légumes
 Faites tomber un légume dans la soupe, elle prendra lentement la couleur du légume qui vient de tomber ! 
 Récupérez la page [08.html](08.html), intégrez là en 1920x1080 puis redimensionnez là comme vous le souhaitez.
