@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Inktober - 09 - Soirée</title>
+    <meta charset="utf-8">
+    <script src="https://cdn.jsdelivr.net/npm/comfy.js@latest/dist/comfy.min.js"></script>
+</head>
+
+<style>
+    .laser {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 5px;
+        height: 1500px;
+        background: rgba(0, 255, 0, 1);
+        transform-origin: center bottom;
+        box-shadow: 0px 0px 15px rgba(0, 255, 0, 1);
+        animation: laser 2s infinite
+    }
+
+    @keyframes laser {
+        0% {
+            transform: rotateZ(-75deg)
+        }
+
+        50% {
+            transform: rotateZ(75deg)
+        }
+
+        100% {
+            transform: rotateZ(-75deg)
+        }
+    }
+</style>
+
+<body>
+
+</body>
+
+<script>
+
+    var nblaser = 0;
+    var countdown = 0;
+
+    function randInt(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) + min)
+    }
+
+    function randFloat(min, max) {
+        return Math.random() * (max - min + 1) + min
+    }
+
+    function randColor() {
+        return "#" + Math.floor(Math.random() * 16777216).toString(16);
+    }
+
+    var mess;
+    ComfyJS.onCommand = (user, command, message, flags, extra) => {
+
+        if (command === "laser" && nblaser < 30) {
+            nblaser++;
+            var laserDiv = document.createElement('div');
+            var laserColor = "white";
+            if (message != '') {
+                laserColor = message;
+            }
+            else {
+                laserColor = randColor();
+            }
+
+            laserDiv.classList.add("laser");
+            laserDiv.style.animation = "laser " + randInt(2, 10) + "s infinite"
+            laserDiv.style.background = laserColor;
+            laserDiv.style.boxShadow = "0px 0px 15px " + laserColor;
+            laserDiv.id = "user";
+            document.body.appendChild(laserDiv);
+        }
+
+        if (user === nomChaineTwitch && command === "clear") {
+            document.body.innerHTML = "";
+            nblaser = 0;
+        }
+
+        if (user === nomChaineTwitch && command === "lasershow") {
+
+            if (message == '') {
+                countdown = 10;
+            }
+            else if (!isNaN(message)) {
+                countdown = parseInt(message)
+            }
+
+            document.body.innerHTML = "";
+            for (var i = 0; i < 40; i++) {
+                var laserDiv = document.createElement('div');
+                var laserColor = randColor();
+                laserDiv.classList.add("laser");
+                laserDiv.style.animation = "laser " + randFloat(2, 10) + "s infinite"
+                laserDiv.style.background = laserColor;
+                laserDiv.style.boxShadow = "0px 0px 15px " + laserColor;
+                document.body.appendChild(laserDiv);
+            }
+        }
+    }
+
+    setInterval(function () {
+        console.log(countdown)
+        if (countdown != 0) {
+            countdown--;
+        }
+
+        if (countdown == 1) {
+            document.body.innerHTML = "";
+        }
+
+    }, 1000);
+
+
+    nomChaineTwitch = "TotoroPHD"  // METTEZ ICI LE NOM DE VOTRE CHAINE TWITCH
+    ComfyJS.Init(nomChaineTwitch)
+
+</script>
+
+</html>
