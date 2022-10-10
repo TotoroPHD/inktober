@@ -6,6 +6,12 @@ Pour m'amuser un peu, j'ai décidé d'utiliser la liste Inktober de Marie Boisea
 ## HOW TO : 
 Chaque jour une page en rapport au mot du jour. Vous récupérez la page, vous l'éditez pour mettre votre nom de chaîne en bas à la place de "totorophd" et vous l'intégrez simplement en browser source sur OBS
 
+# JOUR 10 : Motif
+Une page au motif évolutif : Chaque lettre tapée dans le chat fait changer les cases, à chaque lettre sa couleur et sa forme. Donc vous pouvez théoriquement relire le chat en décryptant les formes et les couleurs !
+Récupérez la page [10.html](10.html) et intégrez là à la taille que vous voulez ! 
+
+https://user-images.githubusercontent.com/64203596/194961531-52bb9cf5-1614-4387-8291-597cda8a57d7.mp4
+
 # JOUR 09 : Soirée
 ET C'EST PARTI POUR LA GROSSE SOIREEEEEE ATTRAPE LES LASERS MAN C'EST TROP SUR 
 Récupérez la page [09.html](09.html), intégrez là en 1920x1080 
