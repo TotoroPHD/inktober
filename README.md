@@ -9,6 +9,7 @@ Chaque jour une page en rapport au mot du jour. Vous récupérez la page, vous l
 # JOUR 10 : Motif
 Une page au motif évolutif : Chaque lettre tapée dans le chat fait changer les cases, à chaque lettre sa couleur et sa forme. Donc vous pouvez théoriquement relire le chat en décryptant les formes et les couleurs !
 Récupérez la page [10.html](10.html) et intégrez là à la taille que vous voulez ! 
+Vous pouvez aussi taper !random ou !fill ou !remplir pour remplir l'intégralité des formes avec une forme et une couleur au hasard !
 
 https://user-images.githubusercontent.com/64203596/194961531-52bb9cf5-1614-4387-8291-597cda8a57d7.mp4
 
