@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Inktober - 11 - Transport</title>
+    <meta charset="utf-8">
+    <script src="https://cdn.jsdelivr.net/npm/comfy.js@latest/dist/comfy.min.js"></script>
+</head>
+
+<style>
+    body {
+        overflow: hidden;
+    }
+
+    .emoji {
+        position: absolute;
+        font-size: 150px;
+        z-index: 1;
+    }
+
+    .🚣,
+    .🏍️,
+    .🛴,
+    .🚲,
+    .🚌,
+    .🚗 {
+        bottom: 0;
+    }
+
+    @keyframes 🚣 {
+        0% {
+            transform: translateX(0vw);
+            animation-timing-function: ease-in-out;
+        }
+
+        20% {
+            transform: translateX(20vw);
+            animation-timing-function: ease-in-out;
+        }
+
+        40% {
+            transform: translateX(40vw);
+            animation-timing-function: ease-in-out;
+        }
+
+        60% {
+            transform: translateX(60vw);
+            animation-timing-function: ease-in-out;
+        }
+
+        80% {
+            transform: translateX(80vw);
+            animation-timing-function: ease-in-out;
+        }
+
+        100% {
+            transform: translateX(100vw);
+            animation-timing-function: ease-in-out;
+        }
+    }
+
+    .✈️ {
+        bottom: -200px;
+        font-size: 0px;
+        height: auto;
+        left: 20%;
+    }
+
+    @keyframes ✈️ {
+        0% {
+            transform: translateY(0px) translateX(0px);
+            font-size: 20px;
+        }
+
+        50% {
+            transform: translateY(-60vh) translateX(60vh);
+            font-size: 150px;
+        }
+
+        100% {
+            transform: translateY(-120vh) translateX(120vh);
+            font-size: 150px;
+        }
+    }
+
+    .🚁 {
+        bottom: 0;
+        left: 50%;
+    }
+
+    @keyframes 🚁 {
+        20% {
+            transform: translateY(0px);
+            animation-timing-function: ease-in;
+        }
+
+        60% {
+            transform: translateY(-60vh);
+        }
+
+        70% {
+            transform: translateY(-70vh) translateX(-5vw) rotateZ(-20deg);
+            animation-timing-function: ease-in;
+        }
+
+        100% {
+            transform: translateY(-70vh) translateX(-200vw) rotateZ(-45deg);
+        }
+    }
+
+    @keyframes 🏍️ {
+        0% {
+            transform: translateX(120vw);
+            animation-timing-function: ease-in;
+        }
+
+        20% {
+            transform: translateX(-10vw);
+        }
+
+        100% {
+            transform: translateX(-20vw);
+        }
+    }
+
+    @keyframes 🛴 {
+        0% {
+            transform: translateX(110vw);
+            animation-timing-function: ease-out;
+        }
+
+        20% {
+            transform: translateX(80vw);
+            animation-timing-function: ease-out;
+        }
+
+        40% {
+            transform: translateX(50vw);
+            animation-timing-function: ease-out;
+        }
+
+        60% {
+            transform: translateX(20vw);
+            animation-timing-function: ease-out;
+        }
+
+        80% {
+            transform: translateX(-10vw);
+            animation-timing-function: ease-out;
+        }
+
+        100% {
+            transform: translateX(-40vw);
+            animation-timing-function: ease-out;
+        }
+    }
+
+    @keyframes 🚲 {
+        0% {
+            transform: translateX(110vw);
+        }
+
+        100% {
+            transform: translateX(-40vw);
+        }
+    }
+
+
+    @keyframes 🚗 {
+        0% {
+            transform: translateX(110vw);
+        }
+
+        60% {
+            transform: translateX(-40vw);
+        }
+
+        100% {
+            transform: translateX(-40vw);
+        }
+    }
+
+    @keyframes 🚌 {
+        0% {
+            transform: translateX(110vw);
+            animation-timing-function: ease-out;
+        }
+
+        50% {
+            transform: translateX(20vw);
+        }
+
+        80% {
+            transform: translateX(20vw);
+            animation-timing-function: ease-in;
+        }
+
+        100% {
+            transform: translateX(-20vw);
+        }
+    }
+
+    .🙎‍♀️ {
+        bottom: 0;
+        left: 20vw;
+        font-size: 70px;
+        z-index: 0;
+    }
+
+    @keyframes 🙎‍♀️ {
+        0% {
+            transform: translateY(20vh) translateX(50%);
+            animation-timing-function: ease-out;
+        }
+
+        20% {
+            transform: translateY(-20px) translateX(50%);
+        }
+
+        100% {
+            transform: translateY(-20px) translateX(50%);
+        }
+    }
+
+
+    .🪂,
+    .🛸 {
+        top: 0;
+    }
+
+    @keyframes 🪂 {
+        0% {
+            transform: translateY(10vh) translateX(-20vw);
+        }
+
+        100% {
+            transform: translateY(50vh) translateX(110vw);
+        }
+    }
+
+    @keyframes 🛸 {
+        0% {
+            transform: translateY(10vh) translateX(-20vw);
+            animation-timing-function: ease-in-out;
+        }
+
+        20% {
+            transform: translateY(30vh) translateX(80vw);
+            animation-timing-function: ease-in-out;
+        }
+
+        40% {
+            transform: translateY(50vh) translateX(20vw);
+            animation-timing-function: ease-in-out;
+        }
+
+        50% {
+            transform: translateY(60vh) translateX(50vw);
+            animation-timing-function: ease-in-out;
+        }
+
+        90% {
+            transform: translateY(60vh) translateX(50vw);
+            animation-timing-function: ease-in-out;
+        }
+
+        100% {
+            transform: translateY(60vh) translateX(120vw);
+            animation-timing-function: ease-in-out;
+        }
+    }
+
+    .🐄 {
+        bottom: 0;
+        left: 50vw;
+        font-size: 70px;
+        z-index: 0;
+    }
+
+    @keyframes 🐄 {
+        0% {
+            transform: translateY(20vh) translateX(50%);
+        }
+
+        50% {
+            transform: translateY(20vh) translateX(50%);
+        }
+
+        100% {
+            transform: translateY(-60vh) translateY(50%) translateX(60%);
+        }
+    }
+</style>
+
+<body>
+    <div id="emoji"></div>
+</body>
+
+<script>
+
+    var emojiList = ["✈️", "🚣", "🚁", "🏍️", "🏎️", "🛴", "🚜", "🚲", "🚢", "🚂", "🚜", "🚌", "🚗", "🪂", "🛸"]
+    var group1 = ["🏍️", "🏎️"]
+    var group2 = ["🚲", "🚂", "🚢", "🚜"]
+
+    function delay(time) {
+        return new Promise(resolve => setTimeout(resolve, time));
+    }
+
+    function randInt(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) + min)
+    }
+
+    function addEmoji(emoji, duration = 10) {
+        var newdiv = document.createElement('div');
+        newdiv.classList.add("emoji");
+        newdiv.innerHTML = emoji;
+        if (group1.includes(emoji)) {
+            newdiv.style.animation = "🏍️ 10s linear forwards"
+            newdiv.classList.add("🏍️");
+        }
+        else if (group2.includes(emoji)) {
+            newdiv.style.animation = "🚲 10s linear forwards"
+            newdiv.classList.add("🚲");
+        }
+        else {
+            newdiv.style.animation = emoji + " 10s linear forwards"
+            newdiv.classList.add(emoji);
+        }
+
+        document.body.appendChild(newdiv);
+        delay(duration * 1000).then(() => {
+            document.body.removeChild(newdiv);
+        });
+    }
+
+    ComfyJS.onCommand = (user, command, message, flags, extra) => {
+        if (command === "transport") {
+            var randEmoji = emojiList[randInt(0, emojiList.length - 1)]
+            addEmoji(randEmoji);
+            if (randEmoji == "🚌") {
+                addEmoji("🙎‍♀️", 8)
+            }
+
+            if (randEmoji == "🛸") {
+                addEmoji("🐄", 8)
+            }
+        }
+    }
+
+    nomChaineTwitch = "TotoroPHD"  // METTEZ ICI LE NOM DE VOTRE CHAINE TWITCH
+    ComfyJS.Init(nomChaineTwitch)
+
+</script>
+
+</html>
