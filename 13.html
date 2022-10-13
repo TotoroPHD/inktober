@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Inktober - 13 -Baignade</title>
+    <meta charset="utf-8">
+    <script src="https://cdn.jsdelivr.net/npm/comfy.js@latest/dist/comfy.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tsparticles/2.3.4/tsparticles.bundle.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<style>
+    body {
+        overflow: hidden;
+    }
+
+    .plongeoir {
+        position: absolute;
+        right: 0px;
+        top: 500px;
+        width: 500px;
+        height: 20px;
+        background: rgba(0, 255, 255, 1);
+        border: solid;
+        border-width: 3px;
+        border-color: black;
+        animation: plongeoir 14s 1 linear forwards;
+    }
+
+    @keyframes plongeoir {
+        0% {
+            transform: translateX(500px);
+        }
+
+        10%,
+        90% {
+            transform: translateX(30px);
+        }
+
+        100% {
+            transform: translateX(500px);
+        }
+
+    }
+
+    .piscine {
+        position: absolute;
+        z-index: 1;
+        bottom: 0px;
+        width: 300px;
+        height: auto;
+        animation: piscine 16s 1 linear forwards;
+    }
+
+    @keyframes piscine {
+        0% {
+            transform: translateX(800px) translateY(300px);
+        }
+
+        10%,
+        90% {
+            transform: translateX(800px) translateY(10px);
+        }
+
+        100% {
+            transform: translateX(800px) translateY(300px);
+        }
+
+    }
+
+    span {
+        z-index: 0;
+        font-family: 'Montserrat', sans-serif;
+        color: #fff;
+        font-size: 40px;
+        text-shadow: 2px 0 0 #000, 0 -2px 0 #000, 0 2px 0 #000, -2px 0 0 #000;
+        position: absolute;
+        width: 500px;
+        transform-origin: center top;
+        transform: translateX(1200px) translateY(250px) rotate(-90deg);
+    }
+
+    @keyframes plongeon1 {
+        0% {
+            transform: translateX(500px);
+        }
+
+        30% {
+            transform: translateX(0px);
+        }
+
+        35%,
+        65% {
+            transform: scaleY(50%) translateY(500px);
+        }
+
+        70% {
+            transform: translateX(0px);
+        }
+
+        75% {
+            transform: translateX(-200px) translateY(-200px);
+        }
+
+        78% {
+            transform: translateX(-280px) translateY(-240px);
+        }
+
+        80% {
+            transform: translateX(-350px) translateY(-250px);
+        }
+
+        83% {
+            transform: translateX(-430px) translateY(-200px);
+        }
+
+        85% {
+            transform: translateX(-480px) translateY(-150px);
+        }
+
+        100% {
+            transform: translateX(-530px) translateY(800px);
+        }
+    }
+
+    @keyframes plongeon2 {
+        0% {
+            transform: translateX(500px);
+        }
+
+        10%,
+        15% {
+            transform: translateX(0px);
+        }
+
+        20%,
+        40%,
+        60%,
+        69%,
+        98% {
+            transform: scaleY(50%) translateY(500px)
+        }
+
+        51%,
+        53%,
+        55% {
+            transform: scaleY(50%) translateY(500px) translateX(2px)
+        }
+
+        52%,
+        54%,
+        56% {
+            transform: scaleY(50%) translateY(500px) translateX(-2px)
+        }
+
+        57%,
+        59%,
+        61% {
+            transform: scaleY(50%) translateY(500px) translateX(4px)
+        }
+
+        58%,
+        60%,
+        62% {
+            transform: scaleY(50%) translateY(500px) translateX(-4px)
+        }
+
+        63%,
+        65%,
+        67% {
+            transform: scaleY(50%) translateY(500px) translateX(6px)
+        }
+
+        64%,
+        66%,
+        68% {
+            transform: scaleY(50%) translateY(500px) translateX(-6px)
+        }
+
+        100% {
+            transform: translateX(500px);
+        }
+    }
+</style>
+
+<body>
+    <div class="particles" style="z-index:999" id="tsparticles"></div>
+</body>
+
+<script>
+
+    var options =
+    {
+        fullScreen:
+        {
+            enable: true,
+        },
+        particles: {
+            number: {
+                value: 0
+            },
+            color: {
+                value: "#8AB7E9"
+            },
+            life: {
+                duration: {
+                    sync: true,
+                    value: 10
+                },
+                count: 1
+            },
+            size: {
+                value: 5,
+                random: {
+                    enable: true,
+                    minimumValue: 1
+                }
+            },
+            move: {
+                outModes: {
+                    bottom: "none",
+                    top: "none",
+                    default: "destroy"
+                },
+                enable: true,
+                gravity: {
+                    enable: true
+                },
+                angle: {
+                    value: 70
+                },
+                speed: 15,
+                trail: {
+                    enable: true,
+                    fillColor: "transparent",
+                    length: 10,
+                }
+            }
+        },
+        emitters: {
+            direction: "top",
+            life: {
+                count: 3,
+                duration: 0.2,
+                delay: 0
+            },
+            position: {
+                x: 50,
+                y: 90
+            },
+            rate: {
+                delay: 0,
+                quantity: 5
+            },
+            size: {
+                width: 2,
+                height: 0
+            }
+        }
+    }
+    var rolling = false;
+
+    function delay(time) {
+        return new Promise(resolve => setTimeout(resolve, time));
+    }
+
+    function randInt(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) + min)
+    }
+
+    ComfyJS.onCommand = (user, command, message, flags, extra) => {
+
+        console.log(command, message);
+
+        if (!rolling && command === "baignade") {
+            rolling = true;
+            var newdiv = document.createElement('div');
+            newdiv.classList.add("plongeoir");
+            document.body.appendChild(newdiv);
+
+            var newdiv2 = document.createElement('div');
+            newdiv2.classList.add("piscine");
+            newdiv2.innerHTML = "<img src=\"https://i.imgur.com/vGEoLpN.png\">"
+            document.body.appendChild(newdiv2);
+
+            var newdiv3 = document.createElement('div');
+            var animationNb = randInt(2, 2)
+
+            delay(2000).then(() => {
+                newdiv3.style.animation = "plongeon" + animationNb + " 8s 1 linear forwards";
+                newdiv3.innerHTML = "<span>" + user + "</span>"
+                document.body.appendChild(newdiv3);
+            });
+
+            delay(9500).then(() => {
+                if (animationNb != 2) {
+                    tsParticles.load("tsparticles", options);
+                }
+            });
+
+            delay(16000).then(() => {
+                rolling = false;
+                document.body.removeChild(newdiv)
+                document.body.removeChild(newdiv2)
+                document.body.removeChild(newdiv3)
+            });
+        }
+    }
+
+    nomChaineTwitch = "TotoroPHD"  // METTEZ ICI LE NOM DE VOTRE CHAINE TWITCH
+    ComfyJS.Init(nomChaineTwitch)
+
+</script>
+
+</html>
