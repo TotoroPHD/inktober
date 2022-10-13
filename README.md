@@ -6,8 +6,17 @@ Pour m'amuser un peu, j'ai décidé d'utiliser la liste Inktober de Marie Boisea
 ## HOW TO : 
 Chaque jour une page en rapport au mot du jour. Vous récupérez la page, vous l'éditez pour mettre votre nom de chaîne en bas à la place de "totorophd" et vous l'intégrez simplement en browser source sur OBS
 
+# JOUR 13 : Baignade
 
-# JOUR 12 : Nuage
+Quand un viewer tapes "!baignade", son pseudo s'avance sur un plongeoir et saute dans une piscine. 
+2 animations possibles au hasard, "je plonge" ou "j'ai peur". 
+Je voulais faire plus d'animation des pseudos, notamment en rotation, mais j'ai pas réussi faute de temps et de compréhension du CSS.
+Je suis parti trop loin, j'ai voulu faire trop de trucs, résultat le final est pas aussi bien que ce que je voulais. Tant pis, c'est le jeu, je ferai plus simple demain !
+Récupérez la page [13.html](13.html) et intégrez là en 1920x1080
+
+https://user-images.githubusercontent.com/64203596/195716696-0d572680-937f-4e51-9eff-fd9f086e384a.mp4
+
+# JOUR 12 : Nuages
 
 On joue un peu avec l'aléatoire aujourd'hui ! Si un viewer tapes !nuage, ça rajoute un nuage, à vitesse aléatoire mais plus ou moins rapide selon sa distance, et positionnement aléatoire. Si vous, en tant que streamer, vous tapez "!meteo beau", ça fait pop quelques nuages par minute en boucle. "!meteo moche", et là ça va envoyer la tempête ! "!meteo stop" pour arrêter.
 Récupérez la page [12.html](12.html) et intégrez là à la taille que vous voulez. 
