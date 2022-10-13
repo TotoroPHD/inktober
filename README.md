@@ -6,6 +6,14 @@ Pour m'amuser un peu, j'ai décidé d'utiliser la liste Inktober de Marie Boisea
 ## HOW TO : 
 Chaque jour une page en rapport au mot du jour. Vous récupérez la page, vous l'éditez pour mettre votre nom de chaîne en bas à la place de "totorophd" et vous l'intégrez simplement en browser source sur OBS
 
+
+# JOUR 12 : Nuage
+
+On joue un peu avec l'aléatoire aujourd'hui ! Si un viewer tapes !nuage, ça rajoute un nuage, à vitesse aléatoire mais plus ou moins rapide selon sa distance, et positionnement aléatoire. Si vous, en tant que streamer, vous tapez "!meteo beau", ça fait pop quelques nuages par minute en boucle. "!meteo moche", et là ça va envoyer la tempête ! "!meteo stop" pour arrêter.
+Récupérez la page [12.html](12.html) et intégrez là à la taille que vous voulez. 
+
+https://user-images.githubusercontent.com/64203596/195551970-618d754f-fbc2-4506-b783-10fa1a126598.mp4
+
 # JOUR 11 : Transport
 Peut être celui où je me suis le plus amusé avec les lasers ! Mais du coup je me suis laissé un peu emporté par mon élan et j'ai un peu de retard 🙂 
 Chaque fois qu'un viewer tapes "!transport", ça fait pop un emoji de transport avec son animation dédiée ! C'est aléatoire, et il y en a 15 en tout.
