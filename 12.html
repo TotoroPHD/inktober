@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Inktober - 12 - Nuages</title>
+    <meta charset="utf-8">
+    <script src="https://cdn.jsdelivr.net/npm/comfy.js@latest/dist/comfy.min.js"></script>
+</head>
+
+<style>
+    body {
+        overflow: hidden;
+    }
+
+    .cloud5 {
+        position: absolute;
+        top: 0px;
+        width: 100px;
+        z-index: 1;
+    }
+
+    .cloud4 {
+        position: absolute;
+        top: 20px;
+        z-index: 2;
+        width: 150px;
+    }
+
+    .cloud3 {
+        position: absolute;
+        top: 40px;
+        z-index: 3;
+        width: 200px;
+    }
+
+    .cloud2 {
+        position: absolute;
+        top: 60px;
+        z-index: 4;
+        width: 250px;
+    }
+
+    .cloud1 {
+        position: absolute;
+        top: 80px;
+        z-index: 5;
+        width: 300px;
+    }
+
+
+    @keyframes cloud {
+        0% {
+            transform: translateX(-30vw);
+        }
+
+        100% {
+            transform: translateX(130vw);
+        }
+    }
+</style>
+
+<body>
+
+</body>
+
+<script>
+
+    function delay(time) {
+        return new Promise(resolve => setTimeout(resolve, time));
+    }
+
+    function randInt(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) + min)
+    }
+
+    var UnNuageToutesLes = 0;
+    var incrNuage = 0;
+    
+    function addCloud(distance) {
+        var newdiv = document.createElement('div');
+        var top = randInt(0, 25);
+        var left = randInt(-50, 50);
+        newdiv.innerHTML = "<img class=\"cloud" + distance + "\" style=\"top:" + top + "vh\;left:" + left + "px\" src=\"https://i.imgur.com/ZsgopPF.png\">"
+        var duree = distance * 5 + randInt(-20, 20) / 100 * distance * 5
+        newdiv.style.animation = "cloud " + duree + "s linear forwards";
+
+
+        document.body.appendChild(newdiv);
+        delay(1000 * duree).then(() => {
+            document.body.removeChild(newdiv);
+        });
+    }
+
+    ComfyJS.onCommand = (user, command, message, flags, extra) => {
+
+        console.log(command, message);
+
+        if (command === "nuage") {
+            addCloud(randInt(1, 5));
+        }
+
+        if (command === "meteo" && user === nomChaineTwitch) {
+            if (message === "beau") {
+                UnNuageToutesLes = 20;
+            }
+
+            if (message === "moche") {
+                UnNuageToutesLes = 1;
+            }
+
+            if (message === "stop") {
+                UnNuageToutesLes = 0;
+            }
+        }
+    }
+
+    setInterval(function () {
+        if (UnNuageToutesLes != 0) {
+            incrNuage++
+            if (incrNuage == 10000) {
+                incrNuage = 0;
+            }
+
+            if (incrNuage % UnNuageToutesLes == 0)
+                addCloud(randInt(1, 5))
+        }
+    }, 100);
+
+
+
+    nomChaineTwitch = "TotoroPHD"  // METTEZ ICI LE NOM DE VOTRE CHAINE TWITCH
+    ComfyJS.Init(nomChaineTwitch)
+
+</script>
+
+</html>
