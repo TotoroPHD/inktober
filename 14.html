@@ -231,7 +231,7 @@
     }
 
     ComfyJS.onCommand = (user, command, message, flags, extra) => {
-        if (command === "monstre" && curAnim == false)
+        if (command === "monstre" && curAnim == false && user === nomChaineTwitch)
         {
             if (!message.isNaN)
             {
