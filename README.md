@@ -6,6 +6,15 @@ Pour m'amuser un peu, j'ai décidé d'utiliser la liste Inktober de Marie Boisea
 ## HOW TO : 
 Chaque jour une page en rapport au mot du jour. Vous récupérez la page, vous l'éditez pour mettre votre nom de chaîne en bas à la place de "totorophd" et vous l'intégrez simplement en browser source sur OBS
 
+# JOUR 14 : Lumière
+
+Petit hommage aux Monty Python aujourd'hui !
+Récupérez la page [14.html](14.html) et intégrez là en 1920x1080
+Un monstre a enlevé la lumière ! Il faut qu'un viewer tapes "!lumière" pour rallumer ! Mais attention, le monstre finira par revenir.
+Vous pouvez régler vous même la fréquence à laquelle le monstre revient en tapant "!monstre durée_en_seconde" (Exemple : "!monstre 60" le monstre reviendra toutes les minutes.)
+
+https://user-images.githubusercontent.com/64203596/195850829-05c03558-c6e8-47ed-be67-e1243b4515e1.mp4
+
 # JOUR 13 : Baignade
 
 Quand un viewer tapes "!baignade", son pseudo s'avance sur un plongeoir et saute dans une piscine. 
