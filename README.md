@@ -9,7 +9,8 @@ Chaque jour une page en rapport au mot du jour. Vous récupérez la page, vous l
 # JOUR 14 : Lumière
 
 Petit hommage aux Monty Python aujourd'hui !
-Récupérez la page [14.html](14.html) et intégrez là en 1920x1080
+Récupérez la page [14.html](14.html) et intégrez là en 1920x1080.
+
 Un monstre a enlevé la lumière ! Il faut qu'un viewer tapes "!lumière" pour rallumer ! Mais attention, le monstre finira par revenir.
 Vous pouvez régler vous même la fréquence à laquelle le monstre revient en tapant "!monstre durée_en_seconde" (Exemple : "!monstre 60" le monstre reviendra toutes les minutes.)
 
