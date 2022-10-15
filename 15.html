@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Inktober - 15 - Pic-Nic</title>
+    <meta charset="utf-8">
+    <script src="https://cdn.jsdelivr.net/npm/comfy.js@latest/dist/comfy.min.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+
+<style>
+    body {
+        overflow-y: hidden;
+        height: 100%;
+    }
+
+    .panier {
+        z-index: 1;
+        position: absolute;
+        left: 0px;
+        bottom: 0px;
+        width: 357px;
+        height: 141px;
+        background-image: url("https://i.imgur.com/iQ6BClA.png");
+        animation: panier 20s ease-in-out infinite;
+    }
+
+    @keyframes panier {
+
+        0%,
+        100% {
+            transform: translateX(0px) translateY(0px);
+        }
+
+        50% {
+            transform: translateX(1563px) translateY(0px);
+        }
+    }
+
+    .bouffe {
+        z-index: 0;
+        position: absolute;
+        left: center;
+        top: 0px;
+        left: 0px;
+        font-size: 100px;
+        animation: bouffe 2s ease-in both;
+    }
+
+    .mytable {
+        position: absolute;
+        border-radius: 25px;
+        background-color: rgba(200, 200, 255, 0.8);
+        left: 20px;
+        top: 20px;
+    }
+
+    @keyframes bouffe {
+        0% {
+            transform: translateX(800px) translateY(-100px);
+        }
+
+        100% {
+            transform: translateX(800px) translateY(940px);
+        }
+    }
+</style>
+
+<body>
+    <div class="panier" id="panier"></div>
+    <div class="mytable">
+        <table class="mytable w3-table w3-xlarge w3-quarter w3-centered" id="score">
+            <tr>
+                <th>Pseudo</th>
+                <th>Total</th>
+            </tr>
+        </table>
+    </div>
+</body>
+
+<script>
+
+    function delay(time) {
+        return new Promise(resolve => setTimeout(resolve, time));
+    }
+
+    function randInt(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) + min)
+    }
+
+    var score = [];
+    var scoreDisplay = true;
+
+    var panier = document.getElementById("panier");
+    var bouffeEmojis = ["🧇", "🥨", "🥗", "🧀", "🥖", "🥪", "🌮", "🥫", "🥟", "🥡", "🍙", "🍚", "🥮", "🍩", "🍰", "🥧", "🍦", "🍌", "🍎", "🍇", "🥒", "🥜", "🥭", "🍉"]
+
+    ComfyJS.onCommand = (user, command, message, flags, extra) => {
+
+        if (command == "picnic") {
+            var newdiv = document.createElement('div');
+            newdiv.classList.add("bouffe");
+            newdiv.classList.add("nocontact");
+            newdiv.id = user;
+            newdiv.innerHTML = bouffeEmojis[randInt(0, bouffeEmojis.length - 1)]
+            document.body.appendChild(newdiv);
+
+            delay(2000).then(() => {
+                document.body.removeChild(newdiv)
+            });
+        }
+
+        if (command == "score" && user == nomChaineTwitch) {
+
+            if (scoreDisplay) {
+                scoreDisplay = false;
+                document.getElementById("score").innerHTML = "";
+            }
+            else {
+                scoreDisplay = true;
+                document.getElementById("score").innerHTML = "<tr><th>Pseudo</th><th>Total</th></tr>"
+                for (var i = 0; i < score.length; i++) {
+                    document.getElementById("score").innerHTML += "<tr><td>" + score[i].user + "</td><td>" + score[i].points + "</td></tr>"
+                }
+            }
+        }
+    }
+
+    setInterval(function () {
+        var bouffes = document.getElementsByClassName("bouffe");
+        if (bouffes.length > 0) {
+            for (var i = 0; i < bouffes.length; i++) {
+                var btop = bouffes[i].getBoundingClientRect().top;
+
+                if (btop >= 750 && bouffes[i].classList.contains("nocontact")) {
+
+                    var bouffeleft = bouffes[i].getBoundingClientRect().left;
+                    var bouffewidth = bouffes[i].getBoundingClientRect().width;
+                    var boufferight = bouffeleft + bouffewidth;
+                    var panierleft = panier.getBoundingClientRect().left;
+                    var panierright = panier.getBoundingClientRect().left + panier.getBoundingClientRect().width
+
+                    bouffes[i].classList.remove("nocontact");
+
+                    if (bouffeleft >= panierleft - bouffewidth / 2 && boufferight <= panierright + bouffewidth / 2) {
+                        if (score.length > 0) {
+                            if (score.find(x => x.user === bouffes[i].id) != undefined) {
+                                score.find(x => x.user === bouffes[i].id).points = score.find(x => x.user === bouffes[i].id).points + 1;
+                            }
+                            else {
+                                score.push({ 'user': bouffes[i].id, 'points': 1 });
+                            }
+                        }
+                        else {
+                            score.push({ 'user': bouffes[i].id, 'points': 1 });
+                        }
+                        score.sort(function (a, b) { return b.points - a.points; })
+
+                        if (scoreDisplay) {
+                            document.getElementById("score").innerHTML = "<tr><th>Pseudo</th><th>Total</th></tr>"
+                            for (var i = 0; i < score.length; i++) {
+                                document.getElementById("score").innerHTML += "<tr><td>" + score[i].user + "</td><td>" + score[i].points + "</td></tr>"
+                            }
+                        }
+                        else {
+                            document.getElementById("score").innerHTML = "";
+                        }
+                    }
+                }
+            }
+        }
+    }, 50);
+
+
+    nomChaineTwitch = "TotoroPHD"  // METTEZ ICI LE NOM DE VOTRE CHAINE TWITCH
+    ComfyJS.Init(nomChaineTwitch)
+
+</script>
+
+</html>
