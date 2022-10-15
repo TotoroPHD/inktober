@@ -6,6 +6,13 @@ Pour m'amuser un peu, j'ai décidé d'utiliser la liste Inktober de Marie Boisea
 ## HOW TO : 
 Chaque jour une page en rapport au mot du jour. Vous récupérez la page, vous l'éditez pour mettre votre nom de chaîne en bas à la place de "totorophd" et vous l'intégrez simplement en browser source sur OBS
 
+# JOUR 15 : Pic-Nic
+
+Petit jeu simple aujourd'hui : Quand un viewer tapes "!picnic", ça fait tomber un emoji à emporter dans le panier ! Si ça tombe dedans, alors le viewer marque un point. En tant que streamer/streameuse, vous pouvez afficher ou non le score avec la commande "!score".
+Récupérez la page [14.html](14.html) et intégrez là en 1920x1080.
+
+https://user-images.githubusercontent.com/64203596/195992721-1a29463a-e456-4a6c-9f5e-0ddfc5cde73f.mp4
+
 # JOUR 14 : Lumière
 
 Petit hommage aux Monty Python aujourd'hui !
