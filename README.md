@@ -10,7 +10,7 @@ Chaque jour une page en rapport au mot du jour. Pour récupérez la page chez vo
 
 Parce qu'en tant que streamer on est quand même pas grand chose sans notre communauté pour nous soutenir, aujourd'hui les viewers nous soutiennent au sens litteral ! 
 Quand un viewer tapes "!pont", ça créé un pont du nom du viewer pour faire passer le train de la hype
-Récupérez la page [17.html](15.html) et intégrez là en 1920x1080.
+Récupérez la page [17.html](17.html) et intégrez là en 1920x1080.
 
 https://user-images.githubusercontent.com/64203596/196159217-91c3f3a9-6062-4375-a391-b3af07b4605d.mp4
 
@@ -19,6 +19,7 @@ https://user-images.githubusercontent.com/64203596/196159217-91c3f3a9-6062-4375-
 Parce qu'on a pas tous les jours le temps, le projet du jour m'a vraiment pas pris longtemps, mais au final c'est ptêtre le premier que je vais vraiment utiliser en live !
 Tapez "!espace" pour changer l'image de fond par une random image en 1920x1080 sur le thème de l'espace. 
 Ca passe plutôt bien pour un fond de stream ! 
+Récupérez la page [16.html](16.html) et intégrez là en 1920x1080.
 
 https://user-images.githubusercontent.com/64203596/196155176-9864f12c-fec0-48cc-8e40-cf123107e099.mp4
 
