@@ -116,11 +116,7 @@
 
     }
 
-    var users = ["nahotchan", "Shakawah", "SweetBerry", "UnPseudoTwitchLong", "ponce",]
-    var usercount = 0;
     ComfyJS.onCommand = (user, command, message, flags, extra) => {
-        user = users[usercount % 5]
-        usercount += 1
 
         if (command == "pont" && !animEnCours) {
 
