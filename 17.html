@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Inktober - 17 - Pont</title>
+    <meta charset="utf-8">
+    <script src="https://cdn.jsdelivr.net/npm/comfy.js@latest/dist/comfy.min.js"></script>
+</head>
+
+<style>
+    .train {
+        position: absolute;
+        bottom: 530px;
+        left: -400px;
+        font-size: 300px;
+        animation: train 5s linear both;
+    }
+
+    .pont {
+        position: absolute;
+        bottom: 0px;
+        font-size: 300px;
+        animation: pont 5s linear both;
+    }
+
+    @keyframes pont {
+        0% {
+            transform: translateY(800px)
+        }
+
+        10%,
+        90% {
+            transform: translateY(0px)
+        }
+
+        100% {
+            transform: translateY(800px)
+        }
+    }
+
+    @keyframes train {
+
+        0%,
+        10% {
+            transform: translateX(0px) rotateY(-180deg)
+        }
+
+        90%,
+        100% {
+            transform: translateX(2400px)rotateY(-180deg)
+        }
+    }
+</style>
+
+<body>
+    <canvas id="pont" class="pont" width=1920 height=1080></canvas>
+    <div id="train" class="train"></div>
+</body>
+<script>
+    function delay(time) {
+        return new Promise(resolve => setTimeout(resolve, time));
+    }
+
+    var ctx = pont.getContext('2d'),
+        fontWidth = 10,
+        font = fontWidth + 'px impact',
+        w = 1920,
+        h = 1080,
+        curve = 200,
+        offsetY = 20,
+        bottom = 600,
+        textHeight = 400,
+        dltY = curve / textHeight,
+        angleSteps = 180 / w,
+        i = w,
+        y,
+        os = document.createElement('canvas'),
+        octx = os.getContext('2d');
+    animEnCours = false;
+
+    os.width = w;
+    os.height = h;
+
+    octx.font = font;
+    octx.textBaseline = 'top';
+    octx.textAlign = 'center';
+
+    /// La fonction ci dessous est inspiré d'un (c) Ken Fyrstenberg Nilsen License: CC-Attribute
+    function renderBridgeText(text, color) {
+        octx.clearRect(0, 0, w, h);
+        ctx.clearRect(0, 0, w, h);
+        octx.fillStyle = color;
+        fontWidth = 10;
+        octx.font = fontWidth + 'px impact';
+
+        console.log(octx.measureText(text.toUpperCase()).width);
+
+        while (octx.measureText(text.toUpperCase()).width < 1920) {
+            fontWidth += 5;
+            octx.font = fontWidth + 'px impact';
+        }
+
+        octx.fillText(text.toUpperCase(), w * 0.5, 0);
+        textHeight = 4000 / text.length;
+
+        i = w;
+        dltY = curve / textHeight;
+        y = 0;
+        while (i--) {
+            y = bottom - curve * Math.sin(i * angleSteps * Math.PI / 180);
+            ctx.drawImage(os, i, 0, 1, textHeight, i, h * 0.5 - offsetY / textHeight * y, 1, y);
+        }
+
+        ctx.fillStyle = color;
+        ctx.fillRect(0, 520, 1920, 30);
+
+    }
+
+    var users = ["nahotchan", "Shakawah", "SweetBerry", "UnPseudoTwitchLong", "ponce",]
+    var usercount = 0;
+    ComfyJS.onCommand = (user, command, message, flags, extra) => {
+        user = users[usercount % 5]
+        usercount += 1
+
+        if (command == "pont" && !animEnCours) {
+
+            animEnCours = true;
+            document.getElementById("pont").style.animation = 'none';
+            document.getElementById("pont").offsetHeight; /* trigger reflow */
+            document.getElementById("pont").style.animation = null;
+
+            document.getElementById("train").innerHTML = "🚂";
+            document.getElementById("train").style.animation = 'none';
+            document.getElementById("train").offsetHeight; /* trigger reflow */
+            document.getElementById("train").style.animation = null;
+
+            if (message != '') {
+                renderBridgeText(user, message)
+            }
+            else
+                renderBridgeText(user, "white")
+
+            delay(5000).then(() => {
+                animEnCours = false;
+            });
+        }
+    }
+
+    nomChaineTwitch = "TotoroPHD"  // METTEZ ICI LE NOM DE VOTRE CHAINE TWITCH
+    ComfyJS.Init(nomChaineTwitch)
+
+</script>
+
+</html>
