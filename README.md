@@ -12,6 +12,8 @@ Parce qu'en tant que streamer on est quand même pas grand chose sans notre comm
 Quand un viewer tapes "!pont", ça créé un pont du nom du viewer pour faire passer le train de la hype
 Récupérez la page [17.html](15.html) et intégrez là en 1920x1080.
 
+https://user-images.githubusercontent.com/64203596/196157324-85475d38-7ddc-4905-ae60-55c27bf19d1a.mp4
+
 # JOUR 16 : Espace
 
 Parce qu'on a pas tous les jours le temps, le projet du jour m'a vraiment pas pris longtemps, mais au final c'est ptêtre le premier que je vais vraiment utiliser en live !
