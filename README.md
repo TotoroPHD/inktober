@@ -4,12 +4,26 @@ Inktober 2022 (Liste de Marie Boiseau)
 Pour m'amuser un peu, j'ai décidé d'utiliser la liste Inktober de Marie Boiseau (https://www.twitch.tv/marieboiseau / https://www.instagram.com/marieboiseau/) pour coder chaque jour (si je le peux) une mini page web à intégrer comme Browser Source à OBS pour les streameuses et streamer. 
 
 ## HOW TO : 
-Chaque jour une page en rapport au mot du jour. Vous récupérez la page, vous l'éditez pour mettre votre nom de chaîne en bas à la place de "totorophd" et vous l'intégrez simplement en browser source sur OBS
+Chaque jour une page en rapport au mot du jour. Pour récupérez la page chez vous : Faites un fichier texte quelque part, copier/coller le contenu de la page que vous voulez, remplacez "totorophd" par votre nom de chaîne Twitch, puis sauvegardez le fichier en format .html !
+
+# JOUR 17 : Pont
+
+Parce qu'en tant que streamer on est quand même pas grand chose sans notre communauté pour nous soutenir, aujourd'hui les viewers nous soutiennent au sens litteral ! 
+Quand un viewer tapes "!pont", ça créé un pont du nom du viewer pour faire passer le train de la hype
+Récupérez la page [17.html](15.html) et intégrez là en 1920x1080.
+
+# JOUR 16 : Espace
+
+Parce qu'on a pas tous les jours le temps, le projet du jour m'a vraiment pas pris longtemps, mais au final c'est ptêtre le premier que je vais vraiment utiliser en live !
+Tapez "!espace" pour changer l'image de fond par une random image en 1920x1080 sur le thème de l'espace. 
+Ca passe plutôt bien pour un fond de stream ! 
+
+https://user-images.githubusercontent.com/64203596/196155176-9864f12c-fec0-48cc-8e40-cf123107e099.mp4
 
 # JOUR 15 : Pic-Nic
 
 Petit jeu simple aujourd'hui : Quand un viewer tapes "!picnic", ça fait tomber un emoji à emporter dans le panier ! Si ça tombe dedans, alors le viewer marque un point. En tant que streamer/streameuse, vous pouvez afficher ou non le score avec la commande "!score".
-Récupérez la page [14.html](14.html) et intégrez là en 1920x1080.
+Récupérez la page [15.html](15.html) et intégrez là en 1920x1080.
 
 https://user-images.githubusercontent.com/64203596/195992721-1a29463a-e456-4a6c-9f5e-0ddfc5cde73f.mp4
 
