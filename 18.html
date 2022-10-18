@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Inktober - 18 - Fragile</title>
+    <meta charset="utf-8">
+    <script src="https://cdn.jsdelivr.net/npm/comfy.js@latest/dist/comfy.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.18.0/matter.js"></script>
+</head>
+
+<style>
+    .myCanvas {
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+</style>
+
+<body onload="createWorld()">
+    <canvas id="canvas" class="myCanvas"></canvas>
+</body>
+
+<script>
+    var Engine = Matter.Engine,
+        Render = Matter.Render,
+        Runner = Matter.Runner,
+        Bodies = Matter.Bodies,
+        Composite = Matter.Composite;
+    Common = Matter.Common;
+
+    var engine = Engine.create();
+
+    var render = Render.create({
+        element: document.body,
+        canvas: canvas,
+        engine: engine,
+        options:
+        {
+            background: 'transparent',
+            wireframeBackground: 'transparent',
+            width: 1920,
+            height: 1080,
+            wireframes: false
+        }
+    });
+
+    var boite = Bodies.rectangle(1000, 200, 200, 128,
+        {
+            render: {
+                sprite: {
+                    texture: 'https://i.imgur.com/LGmNvSd.jpg'
+                }
+            }
+        }
+    );
+
+    var sol = Bodies.rectangle(1920 / 2, 1080 + 10, 1920, 10, { isStatic: true });
+    var murgauche = Bodies.rectangle(-10, 1080 / 2, 10, 1080, { isStatic: true });
+    var murdroit = Bodies.rectangle(1930, 1080 / 2, 10, 1080, { isStatic: true });
+    var plafond = Bodies.rectangle(1920 / 2, -10, 1920, 10, { isStatic: true });
+
+    var runner = Runner.create();
+
+
+    ComfyJS.onCommand = (user, command, message, flags, extra) => {
+        if (command === "fragile") {
+            var forceMagnitude = 0.05 * boite.mass;
+
+            Matter.Body.applyForce(boite, { x: boite.position.x + 20, y: boite.position.y }, {
+                x: (forceMagnitude + Common.random() * forceMagnitude) * Common.choose([1, -1]),
+                y: (forceMagnitude + Common.random() * forceMagnitude) * Common.choose([0, -1])
+            });
+        }
+    }
+
+    function createWorld() {
+        Composite.add(engine.world, [boite, sol, murgauche, murdroit, plafond]);
+        Render.run(render);
+        Runner.run(runner, engine);
+    }
+
+    nomChaineTwitch = "TotoroPHD"  // METTEZ ICI LE NOM DE VOTRE CHAINE TWITCH
+    ComfyJS.Init(nomChaineTwitch)
+</script>
+
+</html>
