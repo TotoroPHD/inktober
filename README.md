@@ -6,6 +6,14 @@ Pour m'amuser un peu, j'ai décidé d'utiliser la liste Inktober de Marie Boisea
 ## HOW TO : 
 Chaque jour une page en rapport au mot du jour. Pour récupérez la page chez vous : Faites un fichier texte quelque part, copier/coller le contenu de la page que vous voulez, remplacez "totorophd" par votre nom de chaîne Twitch, puis sauvegardez le fichier en format .html !
 
+
+# JOUR 18 : Fragile
+
+Vos viewers vont pouvoir se prendre pour des livreurs chronopost aujourd'hui : En tapant "!fragile", le colis est très gentiment traité avec amour et délicatesse !
+Récupérez la page [18.html](18.html) et intégrez là en 1920x1080.
+
+https://user-images.githubusercontent.com/64203596/196501774-5555dc7e-b482-415e-9bd4-e72c18648a05.mp4
+
 # JOUR 17 : Pont
 
 Parce qu'en tant que streamer on est quand même pas grand chose sans notre communauté pour nous soutenir, aujourd'hui les viewers nous soutiennent au sens litteral ! 
