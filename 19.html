@@ -49,7 +49,8 @@
             transform: translateY(900px) scaleX(.3)
         }
 
-        95%,100% {
+        95%,
+        100% {
             transform: translateX(1250px) translateY(900px) scaleX(.3)
         }
 
@@ -150,12 +151,13 @@
 
     @keyframes walle {
 
-        0%,20%
-        {
+        0%,
+        20% {
             transform: translateX(-200px)
         }
 
-        50%,70% {
+        50%,
+        70% {
             transform: translateX(800px)
         }
 
@@ -179,7 +181,7 @@
 <script>
 
     var curTexte = "COUCOU"
-
+    var animEnCours = false;
     function getTextWidth(text, font) {
         var canvas = getTextWidth.canvas || (getTextWidth.canvas = document.createElement("canvas"));
         var context = canvas.getContext("2d");
@@ -188,14 +190,15 @@
         return metrics.width;
     };
 
+    function delay(time) {
+        return new Promise(resolve => setTimeout(resolve, time));
+    }
+
     ComfyJS.onCommand = (user, command, message, flags, extra) => {
 
-        function delay(time) {
-            return new Promise(resolve => setTimeout(resolve, time));
-        }
+        if (command == "concentré" && !animEnCours) {
 
-        if (command == "concentré") {
-
+            animEnCours = true;
             curTexte = user
 
             var fontSizePixel = 100;
@@ -235,7 +238,7 @@
 
             var walle = document.createElement('div');
             walle.classList.add("walle");
-            document.body.appendChild(walle);            
+            document.body.appendChild(walle);
 
             delay(6000).then(() => {
                 document.body.removeChild(newdivBG)
@@ -244,6 +247,7 @@
                 document.body.removeChild(newdivPGT)
                 document.body.removeChild(newdivPDT)
                 document.body.removeChild(walle)
+                animEnCours = false;
             });
         }
     }
