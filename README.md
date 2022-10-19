@@ -7,7 +7,7 @@ Pour m'amuser un peu, j'ai décidé d'utiliser la liste Inktober de Marie Boisea
 Chaque jour une page en rapport au mot du jour. Pour récupérez la page chez vous : Faites un fichier texte quelque part, copier/coller le contenu de la page que vous voulez, remplacez "totorophd" par votre nom de chaîne Twitch, puis sauvegardez le fichier en format .html !
 
 
-#Jour 19 : Concentré
+# Jour 19 : Concentré
 
 Il faut rendre à Wall-E ce qui appartient à César... En tapant "!concentré", vos viewers seront compressés et Wall-E s'en débarrasera ! 
 Récupérez la page [19.html](19.html) et intégrez là en 1920x1080.
