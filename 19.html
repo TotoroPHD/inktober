@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Inktober - 19 - Concentré</title>
+    <meta charset="utf-8">
+    <script src="https://cdn.jsdelivr.net/npm/comfy.js@latest/dist/comfy.min.js"></script>
+</head>
+
+<style>
+    body {
+        overflow: hidden;
+    }
+
+    .textDiv {
+        position: absolute;
+        left: 810px;
+        top: 0px;
+        width: 300px;
+        height: 100px;
+        border: solid;
+        background-color: orange;
+        animation: textDiv 6s linear both;
+        text-align: center;
+    }
+
+    .texte {
+        position: absolute;
+        font: 40px "impact";
+    }
+
+    @keyframes textDiv {
+        0% {
+            transform: translateY(-200px)
+        }
+
+        10%,
+        30% {
+            transform: translateY(400px)
+        }
+
+        40%,
+        50% {
+            transform: translateY(400px) scaleX(.3)
+        }
+
+        60%,
+        70% {
+            transform: translateY(900px) scaleX(.3)
+        }
+
+        95%,100% {
+            transform: translateX(1250px) translateY(900px) scaleX(.3)
+        }
+
+
+    }
+
+    .presseGauche {
+        position: absolute;
+        left: 0px;
+        top: 435px;
+        width: 1000px;
+        height: 30px;
+        border: solid;
+        background-color: grey;
+        animation: presseGauche 6s linear both
+    }
+
+    .presseGaucheT {
+        position: absolute;
+        left: 1000px;
+        top: 400px;
+        width: 50px;
+        height: 100px;
+        border: solid;
+        background-color: grey;
+        animation: presseGauche 6s linear both
+    }
+
+    @keyframes presseGauche {
+        0% {
+            transform: translateX(-1200px)
+        }
+
+        20%,
+        30% {
+            transform: translateX(-245px)
+        }
+
+        40% {
+            transform: translateX(-138px)
+        }
+
+        100% {
+            transform: translateX(-1200px)
+        }
+    }
+
+    .presseDroite {
+        position: absolute;
+        right: 0px;
+        top: 435px;
+        width: 1000px;
+        height: 30px;
+        border: solid;
+        background-color: grey;
+        animation: presseDroite 6s linear both
+    }
+
+    .presseDroiteT {
+        position: absolute;
+        right: 1000px;
+        top: 400px;
+        width: 50px;
+        height: 100px;
+        border: solid;
+        background-color: grey;
+        animation: presseDroite 6s linear both
+    }
+
+    @keyframes presseDroite {
+        0% {
+            transform: translateX(1200px)
+        }
+
+        20%,
+        30% {
+            transform: translateX(245px)
+        }
+
+        40% {
+            transform: translateX(138px)
+        }
+
+        100% {
+            transform: translateX(1200px)
+        }
+    }
+
+    .walle {
+        position: absolute;
+        left: -50px;
+        bottom: 0px;
+        width: 200px;
+        height: 200px;
+        background-image: url("https://i.imgur.com/d3uXpTG.png");
+        animation: walle 6s linear both;
+    }
+
+    @keyframes walle {
+
+        0%,20%
+        {
+            transform: translateX(-200px)
+        }
+
+        50%,70% {
+            transform: translateX(800px)
+        }
+
+        90% {
+            transform: translateX(1800px)
+        }
+
+        95% {
+            transform: translateX(1800px) rotateY(180deg)
+        }
+
+        100% {
+            transform: translateX(-200px) rotateY(180deg)
+        }
+    }
+</style>
+
+<body>
+</body>
+
+<script>
+
+    var curTexte = "COUCOU"
+
+    function getTextWidth(text, font) {
+        var canvas = getTextWidth.canvas || (getTextWidth.canvas = document.createElement("canvas"));
+        var context = canvas.getContext("2d");
+        context.font = font;
+        var metrics = context.measureText(text);
+        return metrics.width;
+    };
+
+    ComfyJS.onCommand = (user, command, message, flags, extra) => {
+
+        function delay(time) {
+            return new Promise(resolve => setTimeout(resolve, time));
+        }
+
+        if (command == "concentré") {
+
+            curTexte = user
+
+            var fontSizePixel = 100;
+            var largeurText = getTextWidth(curTexte.toUpperCase(), fontSizePixel + "px impact");
+
+            while (largeurText > 300) {
+                fontSizePixel = fontSizePixel - 1;
+                largeurText = getTextWidth(curTexte.toUpperCase(), fontSizePixel + "px impact");
+            }
+
+            var newdivBG = document.createElement('div');
+            newdivBG.classList.add("textDiv");
+            document.body.appendChild(newdivBG);
+
+            var newdivBT = document.createElement('div');
+            newdivBG.classList.add("texte");
+            newdivBG.appendChild(newdivBT);
+
+            newdivBT.innerHTML = "<span>" + curTexte.toUpperCase() + "</span>"
+            newdivBT.style.font = fontSizePixel + "px impact";
+
+            var newdivPG = document.createElement('div');
+            newdivPG.classList.add("presseGauche");
+            document.body.appendChild(newdivPG);
+
+            var newdivPD = document.createElement('div');
+            newdivPD.classList.add("presseDroite");
+            document.body.appendChild(newdivPD);
+
+            var newdivPGT = document.createElement('div');
+            newdivPGT.classList.add("presseGaucheT");
+            document.body.appendChild(newdivPGT);
+
+            var newdivPDT = document.createElement('div');
+            newdivPDT.classList.add("presseDroiteT");
+            document.body.appendChild(newdivPDT);
+
+            var walle = document.createElement('div');
+            walle.classList.add("walle");
+            document.body.appendChild(walle);            
+
+            delay(6000).then(() => {
+                document.body.removeChild(newdivBG)
+                document.body.removeChild(newdivPG)
+                document.body.removeChild(newdivPD)
+                document.body.removeChild(newdivPGT)
+                document.body.removeChild(newdivPDT)
+                document.body.removeChild(walle)
+            });
+        }
+    }
+
+    nomChaineTwitch = "TotoroPHD"  // METTEZ ICI LE NOM DE VOTRE CHAINE TWITCH
+    ComfyJS.Init(nomChaineTwitch)
+</script>
+
+</html>
