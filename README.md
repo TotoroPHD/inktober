@@ -6,6 +6,16 @@ Pour m'amuser un peu, j'ai décidé d'utiliser la liste Inktober de Marie Boisea
 ## HOW TO : 
 Chaque jour une page en rapport au mot du jour. Pour récupérez la page chez vous : Faites un fichier texte quelque part, copier/coller le contenu de la page que vous voulez, remplacez "totorophd" par votre nom de chaîne Twitch, puis sauvegardez le fichier en format .html !
 
+# Jour 20 : Foule
+
+Chaque viewer peut avoir son propre emoji qui se balade en bas de l'écran ! Il suffit de taper "!foule + un emoji" (exemple : "!foule 😍" et le viewer aura son petit 😍 qui se balade)
+Un emoji par viewer, il peut changer quand il veut avec la même commande et un autre emoji.
+
+Le streamer / La streameuse peut rajouter de son côté soit son propre emoji aussi, soit X emoji d'un coup pour peupler un peu la foule, en tapant "!foule X" (X allant de 1 à 100 max à chaque fois)
+
+Récupérez la page [20.html](20.html) et intégrez là en 1920x1080.
+
+https://user-images.githubusercontent.com/64203596/197043582-25c26958-8844-4f00-b36b-0ed48cc064f6.mp4
 
 # Jour 19 : Concentré
 
