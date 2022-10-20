@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Inktober - 16 - Espace</title>
+    <meta charset="utf-8">
+    <script src="https://cdn.jsdelivr.net/npm/comfy.js@latest/dist/comfy.min.js"></script>
+</head>
+
+<body onload="changeBackground()"></body>
+<script>
+
+    function changeBackground() {
+        fetch("https://source.unsplash.com/1920x1080/?space").then((response) => {
+            document.body.style.backgroundImage = "url(" + response.url + ")";
+        });
+    }
+
+    ComfyJS.onCommand = (user, command, message, flags, extra) => {
+        if (command == "espace") {
+            changeBackground()
+        }
+    }
+
+    nomChaineTwitch = "TotoroPHD"  // METTEZ ICI LE NOM DE VOTRE CHAINE TWITCH
+    ComfyJS.Init(nomChaineTwitch)
+
+</script>
+
+</html>
