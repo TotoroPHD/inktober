@@ -6,6 +6,15 @@ Pour m'amuser un peu, j'ai décidé d'utiliser la liste Inktober de Marie Boisea
 ## HOW TO : 
 Chaque jour une page en rapport au mot du jour. Pour récupérez la page chez vous : Faites un fichier texte quelque part, copier/coller le contenu de la page que vous voulez, remplacez "totorophd" par votre nom de chaîne Twitch, puis sauvegardez le fichier en format .html !
 
+# Jour 21 : Câlin
+
+Oh non, le gif de câlin le plus connu du net est triste :(
+Remplissez sa jauge de câlin avec la commande !calin !
+Attention, il finira toujours par vous en redemander. 
+Récupérez la page [21.html](21.html) et intégrez là en 500x500.
+
+https://user-images.githubusercontent.com/64203596/197203543-91b9644e-e6e0-403e-aa88-390e123ae08f.mp4
+
 # Jour 20 : Foule
 
 Chaque viewer peut avoir son propre emoji qui se balade en bas de l'écran ! Il suffit de taper "!foule + un emoji" (exemple : "!foule 😍" et le viewer aura son petit 😍 qui se balade)
