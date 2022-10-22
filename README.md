@@ -6,6 +6,16 @@ Pour m'amuser un peu, j'ai décidé d'utiliser la liste Inktober de Marie Boisea
 ## HOW TO : 
 Chaque jour une page en rapport au mot du jour. Pour récupérez la page chez vous : Faites un fichier texte quelque part, copier/coller le contenu de la page que vous voulez, remplacez "totorophd" par votre nom de chaîne Twitch, puis sauvegardez le fichier en format .html !
 
+# Jour 22 : Château
+
+C'est jour de tournoi ! 
+Affrontez le meilleur viewer (en commencant par le streameur / la streameuse).
+Tapez "!chateau" pour défier le tenant du titre en cours, et essayez de prendre sa place ! 
+Le tenant du titre part de la gauche, le challenger part de la droite !
+Récupérez la page [22.html](22.html) et intégrez là en 1920x1080.
+
+https://user-images.githubusercontent.com/64203596/197344755-dc586286-d021-4655-a748-d62cc066788c.mp4
+
 # Jour 21 : Câlin
 
 Oh non, le gif de câlin le plus connu du net est triste :(
