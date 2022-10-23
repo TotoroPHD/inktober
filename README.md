@@ -6,6 +6,15 @@ Pour m'amuser un peu, j'ai décidé d'utiliser la liste Inktober de Marie Boisea
 ## HOW TO : 
 Chaque jour une page en rapport au mot du jour. Pour récupérez la page chez vous : Faites un fichier texte quelque part, copier/coller le contenu de la page que vous voulez, remplacez "totorophd" par votre nom de chaîne Twitch, puis sauvegardez le fichier en format .html !
 
+# Jour 23 : Peur
+
+BOUH ! 
+Aujourd'hui, un projet un peu plus customisable pour vous que d'habitude. En tapant "!peur" ou "!bouh", vous ferez pop une image au hasard parmis plusieurs que vous aurez choisi ! J'en ai mis quelques unes pour l'exemple. Il suffit de rajouter des URLs d'image à la variable images dans le code !
+L'image popera au hasard entre 8 positions prédéfinies. Donc projet réadaptable à l'infini...
+Récupérez la page [23.html](23.html) et intégrez là en 1920x1080.
+
+https://user-images.githubusercontent.com/64203596/197408690-d5a92444-78b8-4aa5-8bba-0a4894e624c0.mp4
+
 # Jour 22 : Château
 
 C'est jour de tournoi ! 
