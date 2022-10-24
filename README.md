@@ -6,6 +6,31 @@ Pour m'amuser un peu, j'ai décidé d'utiliser la liste Inktober de Marie Boisea
 ## HOW TO : 
 Chaque jour une page en rapport au mot du jour. Pour récupérez la page chez vous : Faites un fichier texte quelque part, copier/coller le contenu de la page que vous voulez, remplacez "totorophd" par votre nom de chaîne Twitch, puis sauvegardez le fichier en format .html !
 
+# Jour 24 : Cabane
+
+Aujourd'hui, un petit quiz ciné, avec 10 images de film avec une cabane dedans !
+Récupérez la page [24.html](24.html) et intégrez là en 1920x1080.
+Tapez "!quiz" ou "!cabane" pour lancer le quiz. Quand un viewer donne la bonne réponse, le titre s'affiche, le nom du viewer aussi, puis le quiz s'en va. 
+Seul vous pouvez lancer le quiz, pas les viewers. 
+Si personne trouve, vous pouvez taper "!stop" pour donner le titre et arrêter la question.
+
+Bien sûr, le thème du jour est juste un pretexte pour vous fournir clé en main un outil qui vous permet de faire vos propres quiz maison en peu de temps ! 
+Le jeu prend en compte une tolérance orthographique (il faut que le titre soit bien écrit à 80%) et vous pouvez choisir plusieurs orthographes possibles pour les réponses (pratique pour accepter les titres anglais et français par exemple)
+
+La seule chose à faire, c'est rajouter des films à la liste en respectant cette syntaxe : 
+
+```
+            {
+                "names": ["Orthographe acceptée 1", "Orthographe acceptée 2 (facultative)", "Orthographe acceptée 3 (facultative)"],
+                "url": "url de votre image sur le net"
+            },
+
+```
+
+Have fun !
+
+https://user-images.githubusercontent.com/64203596/197613605-73f98db9-281a-4335-b3aa-6b42318ba42f.mp4
+
 # Jour 23 : Peur
 
 BOUH ! 
