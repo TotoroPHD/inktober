@@ -6,6 +6,14 @@ Pour m'amuser un peu, j'ai décidé d'utiliser la liste Inktober de Marie Boisea
 ## HOW TO : 
 Chaque jour une page en rapport au mot du jour. Pour récupérez la page chez vous : Faites un fichier texte quelque part, copier/coller le contenu de la page que vous voulez, remplacez "totorophd" par votre nom de chaîne Twitch, puis sauvegardez le fichier en format .html !
 
+# Jour 25 : Corps
+
+On rejoue avec matter.js, et une revisite du jour 18, avec ce coup ci une ragdoll qui se balade à l'écran. 
+Tout le monde peut taper  "!corps" pour envoyer valser le corps à travers l'écran
+Récupérez la page [25.html](25.html) et intégrez là en 1920x1080.
+
+https://user-images.githubusercontent.com/64203596/197803424-51dc4680-770a-46f6-8f96-7f0a09561b25.mp4
+
 # Jour 24 : Cabane
 
 Aujourd'hui, un petit quiz ciné, avec 10 images de film avec une cabane dedans !
