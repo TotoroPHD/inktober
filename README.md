@@ -6,6 +6,16 @@ Pour m'amuser un peu, j'ai décidé d'utiliser la liste Inktober de Marie Boisea
 ## HOW TO : 
 Chaque jour une page en rapport au mot du jour. Pour récupérez la page chez vous : Faites un fichier texte quelque part, copier/coller le contenu de la page que vous voulez, remplacez "totorophd" par votre nom de chaîne Twitch, puis sauvegardez le fichier en format .html !
 
+# Jour 26 : Nocturne
+
+Affichez la carte du ciel du jour sur votre stream ! Vos viewers peuvent changer la date et l'heure de la carte eux-même 
+Récupérez la page [26.html](26.html) et intégrez là en 1920x1080.
+
+!constellation ou !constellations pour afficher ou non les lignes des constellations
+!jour DD/MM/YYYY pour changer la date de la carte (exemple : !jour 25/08/1980)
+!heure XX (entre 0 et 23) pour changer l'heure de la carte. 
+
+
 # Jour 25 : Corps
 
 On rejoue avec matter.js, et une revisite du jour 18, avec ce coup ci une ragdoll qui se balade à l'écran. 
