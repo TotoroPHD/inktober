@@ -12,9 +12,12 @@ Affichez la carte du ciel du jour sur votre stream ! Vos viewers peuvent changer
 Récupérez la page [26.html](26.html) et intégrez là en 1920x1080.
 
 !constellation ou !constellations pour afficher ou non les lignes des constellations
+
 !jour DD/MM/YYYY pour changer la date de la carte (exemple : !jour 25/08/1980)
+
 !heure XX (entre 0 et 23) pour changer l'heure de la carte. 
 
+https://user-images.githubusercontent.com/64203596/198044716-1083215f-43a4-49bb-9791-19eed2b64ae6.mp4
 
 # Jour 25 : Corps
 
