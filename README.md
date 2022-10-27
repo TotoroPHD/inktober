@@ -6,6 +6,14 @@ Pour m'amuser un peu, j'ai décidé d'utiliser la liste Inktober de Marie Boisea
 ## HOW TO : 
 Chaque jour une page en rapport au mot du jour. Pour récupérez la page chez vous : Faites un fichier texte quelque part, copier/coller le contenu de la page que vous voulez, remplacez "totorophd" par votre nom de chaîne Twitch, puis sauvegardez le fichier en format .html !
 
+# Jour 27 : Souvenir
+
+Cette page garde en mémoire tout ce que vos viewers disent ! 
+Si un viewer tapes "!souvenir", il pourra revoir un de ses vieux messages réapparaître à l'écran.
+Récupérez la page [27.html](27.html) et intégrez là en 1920x1080.
+
+https://user-images.githubusercontent.com/64203596/198410057-dcdfa532-233e-4bb6-9ddc-ad7f321cac5a.mp4
+
 # Jour 26 : Nocturne
 
 Affichez la carte du ciel du jour sur votre stream ! Vos viewers peuvent changer la date et l'heure de la carte eux-même 
