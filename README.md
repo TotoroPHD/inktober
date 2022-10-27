@@ -12,6 +12,9 @@ Cette page garde en mémoire tout ce que vos viewers disent !
 Si un viewer tapes "!souvenir", il pourra revoir un de ses vieux messages réapparaître à l'écran.
 Récupérez la page [27.html](27.html) et intégrez là en 1920x1080.
 
+Par sécurité il y a une limite à 2000 messages en mémoire, mais vous pouvez l'augmenter, c'est tout en bas du code. 
+Attention par contre, les messages modérés restent en mémoire tels quels.
+
 https://user-images.githubusercontent.com/64203596/198410057-dcdfa532-233e-4bb6-9ddc-ad7f321cac5a.mp4
 
 # Jour 26 : Nocturne
