@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Inktober - 28 - Pluie</title>
+    <meta charset="utf-8">
+    <script src="https://cdn.jsdelivr.net/npm/comfy.js@latest/dist/comfy.min.js"></script>
+</head>
+
+<style>
+    body {
+        overflow: hidden;
+        font-size: 50px;
+    }
+
+    .wave1 {
+        position: absolute;
+        z-index: 4;
+        width: 2120px;
+        height: 1080px;
+        background-image: url('https://i.imgur.com/fznwLlh.png');
+        animation: wave 5s ease-in-out infinite alternate;
+    }
+
+    .wave2 {
+        position: absolute;
+        z-index: 2;
+        width: 2120px;
+        height: 1080px;
+        background-image: url('https://i.imgur.com/OwL8Cs5.png');
+        animation: wave 4s ease-in-out infinite alternate;
+    }
+
+    .wave3 {
+        position: absolute;
+        z-index: 1;
+        width: 2120px;
+        height: 1080px;
+        background-image: url('https://i.imgur.com/M9RvWIA.png');
+        animation: wave 6s ease-in-out infinite alternate;
+    }
+
+    .seau {
+        bottom: 200px;
+        z-index:999;
+        left: 0px;
+        width: 300px;
+        height: 300px;
+        position: absolute;
+        animation: seau 2s linear both;
+    }
+
+    img {
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    @keyframes seau {
+        0% {
+            transform: translateX(-500px) translateY(0px) rotate(-180deg)
+        }
+
+        50% {
+            transform: translateX(800px) translateY(200px) rotate(-270deg)
+        }
+
+        100% {
+            transform: translateX(1950px) translateY(0px) rotate(-360deg)
+        }
+    }
+
+    @keyframes wave {
+        0% {
+            transform: translateX(-200px) translateY(0px)
+        }
+
+        25% {
+            transform: translateX(-150px) translateY(10px)
+        }
+
+        50% {
+            transform: translateX(-100px) translateY(0px)
+        }
+
+        75% {
+            transform: translateX(-50px) translateY(10px)
+        }
+
+        100% {
+            transform: translateX(0px) translateY(0px)
+        }
+    }
+
+    .goutte {
+        z-index: 2;
+        position: absolute;
+        animation: goutte 1s ease-in both;
+    }
+
+    @keyframes goutte {
+        0% {
+            transform: translateY(-100px)
+        }
+
+        100% {
+            transform: translateY(1080px)
+        }
+    }
+</style>
+
+<body>
+    <div class="wave1"></div>
+    <div class="wave2"></div>
+    <div class="wave3"></div>
+    <div id="seau" class="seau"><img src="https://i.imgur.com/wZdUONW.png"></div>
+</body>
+
+<script>
+
+    function delay(time) {
+        return new Promise(resolve => setTimeout(resolve, time));
+    }
+
+    function randInt(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) + min)
+    }
+
+    var niveauEau = 0;
+    var curniveauEau = 0;
+
+    var seau = document.getElementById("seau");
+    seau.style.opacity = 0;
+
+    var temps = 5;  // Temps de pluie en secondes
+    var curAnim = false;
+
+    var vague1 = document.getElementsByClassName("wave1")[0]
+    var vague2 = document.getElementsByClassName("wave2")[0]
+    var vague3 = document.getElementsByClassName("wave3")[0]
+
+    vague1.style.bottom = "-820px";
+    vague2.style.bottom = "-810px";
+    vague3.style.bottom = "-800px";
+
+    ComfyJS.onCommand = (user, command, message, flags, extra) => {
+        if (command === "pluie" && !curAnim) {
+            curAnim = true;
+            delay(1000 * temps).then(() => {
+                curAnim = false;
+            });
+
+            for (var i = 0; i < 50 * temps; i++) {
+                delay(i * 20).then(() => {
+                    var goutte = document.createElement('div');
+                    goutte.classList.add("goutte")
+                    goutte.innerHTML = "💧";
+                    goutte.style.left = randInt(0, 1870) + "px";
+                    goutte.style.top = "0px"
+                    document.body.appendChild(goutte);
+
+                    delay(1000).then(() => {
+                        document.body.removeChild(goutte)
+                    });
+                });
+            }
+
+            if (niveauEau <= 1000)
+            {
+                niveauEau += 100;
+            }
+        }
+
+        if (command === "seau" && !curAnim) {
+
+            curAnim = true;
+            seau.style.opacity = 1;
+
+            seau.style.animation = 'none';
+            seau.offsetHeight; /* trigger reflow */
+            seau.style.animation = null;
+
+            if (niveauEau >= 100)
+            {
+                delay(500).then(() => {
+                niveauEau -= 100;
+                });
+            }
+
+            delay(1000).then(() => {
+                curAnim = false;
+            });
+        }
+    }
+
+    setInterval(function () {
+
+        console.log(curAnim)
+        if (curniveauEau < niveauEau)
+        {
+            vague1.style.bottom = Number.parseInt(vague1.style.bottom.replace('px','')) + 2 + "px";
+            vague2.style.bottom = Number.parseInt(vague2.style.bottom.replace('px','')) + 2 + "px";
+            vague3.style.bottom = Number.parseInt(vague3.style.bottom.replace('px','')) + 2 + "px";
+            curniveauEau = curniveauEau + 2;
+        }
+    }, 100);
+
+    setInterval(function () {
+    if (curniveauEau > niveauEau)
+        {
+            vague1.style.bottom = Number.parseInt(vague1.style.bottom.replace('px','')) - 2 + "px";
+            vague2.style.bottom = Number.parseInt(vague2.style.bottom.replace('px','')) - 2 + "px";
+            vague3.style.bottom = Number.parseInt(vague3.style.bottom.replace('px','')) - 2 + "px";
+            curniveauEau = curniveauEau - 2;
+        }
+    }, 10);  
+
+    var limiteMessages = 2000;
+    var nomChaineTwitch = "TotoroPHD"  // METTEZ ICI LE NOM DE VOTRE CHAINE TWITCH
+    ComfyJS.Init(nomChaineTwitch)
+
+</script>
+
+</html>
