@@ -6,6 +6,16 @@ Pour m'amuser un peu, j'ai décidé d'utiliser la liste Inktober de Marie Boisea
 ## HOW TO : 
 Chaque jour une page en rapport au mot du jour. Pour récupérez la page chez vous : Faites un fichier texte quelque part, copier/coller le contenu de la page que vous voulez, remplacez "totorophd" par votre nom de chaîne Twitch, puis sauvegardez le fichier en format .html !
 
+# Jour 28 : Pluie
+
+Oh non, un dégât des eaux sur votre stream ! 
+Est-ce que vos viewers sont loyaux ou chaotiques ? 
+!pluie pour faire pleuvoir et monter le niveau des eaux (Jusqu'à ne plus rien voir)
+!seau pour écoper un peu le stream et retrouver un peu de visibilité !
+Récupérez la page [28.html](28.html) et intégrez là en 1920x1080.
+
+https://user-images.githubusercontent.com/64203596/198679241-b9ccc117-8a02-4464-9c3a-05cd7ace7a8a.mp4
+
 # Jour 27 : Souvenir
 
 Cette page garde en mémoire tout ce que vos viewers disent ! 
