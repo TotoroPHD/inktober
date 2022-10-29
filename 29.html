@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Inktober - 29 - Portrait</title>
+    <meta charset="utf-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/comfy.js@latest/dist/comfy.min.js"></script>
+</head>
+
+<style>
+    body {
+        overflow: hidden;
+        font-size: 50px;
+    }
+
+    .polaroid {
+        position: absolute;
+        border: solid;
+        background-color: white;
+        width: 400px;
+        height: 480px;
+    }
+
+    .portrait {
+        position: relative;
+        top: 20px;
+        left: 20px;
+        width: 360px;
+        height: 360px;
+        background-color: black;
+    }
+
+    .nomViewer {
+        position: relative;
+        margin-top: 40px;
+        width: 380px;
+        font-size: 36px;
+        text-align: center;
+        font-family: 'Permanent Marker', cursive;
+    }
+
+    @keyframes portrait {
+
+        0%,
+        20% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    img {
+        max-width: 100%;
+        max-height: 100%;
+        animation: portrait 2s linear both;
+    }
+</style>
+
+<body>
+
+</body>
+
+<script>
+
+    function delay(time) {
+        return new Promise(resolve => setTimeout(resolve, time));
+    }
+
+    function randInt(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) + min)
+    }
+
+    var ok = true;
+
+    ComfyJS.onCommand = (user, command, message, flags, extra) => {
+        if (command === "portrait" && ok) {
+
+            ok = false;
+            var img = new Image();
+            img.src = "https://thispersondoesnotexist.com/image?t=" + new Date().getTime();
+
+            var pola = document.createElement('div');
+            pola.classList.add("polaroid")
+            var photo = document.createElement('div');
+            photo.classList.add("portrait");
+            photo.innerHTML = "<img src=" + img.src + ">"
+            pola.appendChild(photo);
+            pola.style.transform = "rotate(" + randInt(-10, 10) + "deg)"
+            document.body.appendChild(pola);
+            var nomViewer = document.createElement('div');
+            nomViewer.classList.add("nomViewer");
+            //nomViewer.innerHTML = user;
+            pola.appendChild(nomViewer);
+
+            pola.style.left = randInt(100, 1500) + "px";
+            pola.style.top = randInt(100, 500) + "px";
+
+            delay(1200).then(() => {
+                ok = true;
+            });
+        }
+    }
+
+
+
+    var nomChaineTwitch = "TotoroPHD"  // METTEZ ICI LE NOM DE VOTRE CHAINE TWITCH
+    ComfyJS.Init(nomChaineTwitch)
+
+</script>
+
+</html>
