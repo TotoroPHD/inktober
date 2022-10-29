@@ -6,6 +6,16 @@ Pour m'amuser un peu, j'ai décidé d'utiliser la liste Inktober de Marie Boisea
 ## HOW TO : 
 Chaque jour une page en rapport au mot du jour. Pour récupérez la page chez vous : Faites un fichier texte quelque part, copier/coller le contenu de la page que vous voulez, remplacez "totorophd" par votre nom de chaîne Twitch, puis sauvegardez le fichier en format .html !
 
+# Jour 29 : Portrait 
+
+Et si vous punaisiez les portraits de vos viewers sur votre live ? 
+Chaque fois qu"un viewer tape "!portrait", un polaroid vient se rajouter au mur des portraits, avec son nom ! 
+Les photos sont issues de https://thispersondoesnotexist.com/ une banque de données énorme d'image de gens qui n'existent pas (portrait générés par IA)
+Vous pouvez mettre ça dans un coin du live avec un fond tableau de liège pour plus d'authenticité !
+Récupérez la page [29.html](29.html) et intégrez là en 1920x1080, puis redimensionnez là comme vous voulez !
+
+https://user-images.githubusercontent.com/64203596/198850236-e61b5df4-00ea-423a-be42-de75064ddd4b.mp4
+
 # Jour 28 : Pluie
 
 Oh non, un dégât des eaux sur votre stream ! 
