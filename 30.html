@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Inktober - 30 - Aventure</title>
+    <meta charset="utf-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/comfy.js@latest/dist/comfy.min.js"></script>
+    <script src="./pages.js"></script>
+</head>
+
+<style>
+    body {
+        overflow: hidden;
+    }
+
+    .dialogue {
+        z-index: 3;
+        position: relative;
+        width: 90vw;
+        color: white;
+        font-family: 'VT323', monospace;
+        font-size: 40px;
+    }
+
+    .chrono {
+        z-index: 1;
+        border: 5px solid white;
+        outline: 5px solid black;
+        position: absolute;
+        bottom: 50px;
+        left: 5vw;
+        width: 90vw;
+        height: auto;
+        background-color: black;
+    }
+
+    p {
+        margin: 10px 10px 10px 10px
+    }
+
+    li {
+        margin: 10px 10px 10px 10px
+    }
+</style>
+
+<body>
+    <div id="chrono" class="chrono">
+        <div id="dialogue" class="dialogue">
+        </div>
+    </div>
+</body>
+
+<script>
+
+    var curPage = 1;
+    var curDialogue = pages.find(x => x.page === curPage);
+    var dialogue = document.getElementById("dialogue");
+    var chrono = document.getElementById("chrono");
+    var voteEnCours = false;
+
+    var vote = false;
+    var votes = [];
+    var dureeVote = 30; // Temps de vote en secondes
+    var curChronoVote = -1;
+    var curMessageVote = "<p><i>En attente du lancement du !vote</i></p>"
+
+    refreshDialogue(pages[0].page);
+
+    function delay(time) {
+        return new Promise(resolve => setTimeout(resolve, time));
+    }
+
+    function randInt(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) + min)
+    }
+
+    ComfyJS.onChat = (user, message, flags, self, extra) => {
+        if (vote) {
+            if (Number.parseInt(message) > 0 && Number.parseInt(message) <= curDialogue.choix.length) {
+
+                if (votes.length == 0) {
+                    votes.push({ user: user, vote: Number.parseInt(message) });
+                }
+                else {
+                    if (votes.find(x => x.user === user) == undefined) {
+                        votes.push({ user: user, vote: Number.parseInt(message) });
+                    }
+                }
+            }
+        }
+    }
+
+    ComfyJS.onCommand = (user, command, message, flags, extra) => {
+        if (command === "vote" && user === nomChaineTwitch) {
+            curChronoVote = dureeVote;
+            vote = true;
+        }
+    }
+
+    function refreshDialogue(page) {
+        curPage = page;
+        curDialogue = pages.find(x => x.page === page);
+
+        dialogue.innerHTML = "<p>" + curDialogue.texte + "</p>"
+        for (var i = 0; i < curDialogue.choix.length; i++) {
+            dialogue.innerHTML += "<li>" + (i + 1) + ") " + curDialogue.choix[i].texte + "</li>"
+        }
+
+        if (curDialogue.choix.length > 0) {
+            dialogue.innerHTML += curMessageVote
+        }
+
+    }
+
+    setInterval(function () {
+        if (vote) {
+            if (curChronoVote >= 0) {
+                console.log(curChronoVote)
+                curChronoVote--;
+                curMessageVote = "<p><i>Fin du vote dans " + curChronoVote + " seconde(s)</i></p>"
+                refreshDialogue(curPage);
+            }
+
+            if (curChronoVote == -1 && vote) {
+                vote = false;
+
+                var resultsVote = [];
+                for (var i = 0; i < curDialogue.choix.length; i++) {
+                    var curVote = votes.filter(obj => {
+                        return obj.vote === i + 1
+                    })
+                    resultsVote.push(curVote.length);
+                }
+
+                const max = Math.max(...resultsVote);
+                const indexes = [];
+
+                for (let index = 0; index < resultsVote.length; index++) {
+                    if (resultsVote[index] === max) {
+                        indexes.push(index);
+                    }
+                }
+
+                var destination = 0;
+
+                if (indexes.length == 1) {
+                    curMessageVote = "<p><i>Fin du vote ! Choix du public : " + (indexes[0] + 1) + "</i></p>"
+                    destination = curDialogue.choix[indexes[0]].page;
+                }
+
+                if (indexes.length > 1) {
+                    var print = "";
+                    for (var i = 0; i < indexes.length; i++) {
+                        print += (indexes[i] + 1) + ", "
+                    }
+
+                    var choix = randInt(0, indexes.length - 1)
+
+                    destination = curDialogue.choix[indexes[choix]].page;
+                    curMessageVote = "<p><i>Fin du vote ! Egalité entre " + print + "choix aléatoire : " + (choix + 1) + "!</i></p>"
+                }
+
+                refreshDialogue(curPage);
+
+                delay(5000).then(() => {
+                    curPage = destination;
+                    curMessageVote = "<p><i>En attente du lancement du !vote</i></p>"
+                    votes = [];
+                    refreshDialogue(curPage);
+                });
+            }
+        }
+    }, 1000);
+
+
+    var nomChaineTwitch = "TotoroPHD"  // METTEZ ICI LE NOM DE VOTRE CHAINE TWITCH
+    ComfyJS.Init(nomChaineTwitch)
+
+
+</script>
+
+</html>
