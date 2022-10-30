@@ -6,6 +6,37 @@ Pour m'amuser un peu, j'ai décidé d'utiliser la liste Inktober de Marie Boisea
 ## HOW TO : 
 Chaque jour une page en rapport au mot du jour. Pour récupérez la page chez vous : Faites un fichier texte quelque part, copier/coller le contenu de la page que vous voulez, remplacez "totorophd" par votre nom de chaîne Twitch, puis sauvegardez le fichier en format .html !
 
+# Jour 30 : Aventure
+
+Vous pouvez écrire votre propre aventure dont les viewers sont les héros ! 
+Pour une fois, aujourd'hui, il y a 2 fichiers à récupérer et pas un seul. La page [30.html](30.html) à intégrer comme d'habitudre sur OBS et la page [pages.js](pages.js) qui contient les pages de votre "livre", à garder au même endroit que la page [30.html](30.html)
+
+Le principe : Chaque page contient un numéro de page, un texte, et une liste de choix (numéro de page + texte)
+
+Exemple : 
+```
+        {
+            page: 1,
+            texte: "Vous êtes devant une grotte. Que faites vous ?",
+            choix:
+                [
+                    { page: 2, texte: "Je vais chercher du renfort" },
+                    { page: 3, texte: "Je fonce dedans" },
+                    { page: 4, texte: "Je rentre me coucher" },
+                    { page: 5, texte: "Je mange un bout" }
+                ]
+        },
+```
+
+Quand vous tapez "!vote", le chat doit taper le numéro du choix de la destination. 
+Une fois le vote fini, la prochaine page s'affiche. 
+
+Pour obtenir une FIN, il suffit de laisser les choix de la page vides. 
+
+A vous de jouer maintenant !
+
+https://user-images.githubusercontent.com/64203596/198906821-b06feef4-89c2-468a-b1ce-cb5201acb17e.mp4
+
 # Jour 29 : Portrait 
 
 Et si vous punaisiez les portraits de vos viewers sur votre live ? 
